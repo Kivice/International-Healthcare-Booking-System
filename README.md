@@ -1,6 +1,6 @@
 # International-Healthcare-Booking-System
 This website is an online booking system that is intended to help in reducing the workload of searching for registered healthcare providers in the specific city they are in.
-##🔹 Peer Group Collaboration
+## 🔹 Peer Group Collaboration
 Build your own portolio project and seek guidance and counsel from your peer group as you build. 
 
 Peer Group Structure:
@@ -17,7 +17,7 @@ Learn from your peers’ experiences.
 
 Celebrate success together as a team!
 
-##📂 Assignment Requirements
+## 📂 Assignment Requirements
 All learners are required to submit a hackathon project.
 
 The project must be built strictly using HTML, CSS, javascript and Databases.
@@ -28,7 +28,7 @@ Participants should nominate the most outstanding portfolio project and paste th
 
 Individuals must star rate each other’s solutions and provide constructive comments based on the evaluation criteria below
 
-##🏆 Evaluation Criteria
+## 🏆 Evaluation Criteria
 Submissions will be evaluated based on the following:
 
 Creativity and Ingenuity – Original ideas and standout features.

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>International Healthcare Booking System</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <header style="background-image: url('https://media.istockphoto.com/id/1421323821/vector/circle-with-transition-line-elements-from-white-to-black-abstract-geometric-art-line.jpg?s=1024x1024&w=is&k=20&c=bwDYL6JbbYhh5A_4qeTHYhRvHOhdaFpPmRGSsmVJW2s='); background-size: cover; background-position: center; padding: 20px; text-align: center;">
+            <h1>International Healthcare Booking System</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="meet.html">Our Team</a>
+                <a href="testimonials.html">Testimonials</a>
+            </nav>
+        </header>
+        <div class="contact-container">
+            <div class="contact-header">
+                <h1>Book An Appointment</h1>
+                <p>We'd love to hear from you! Please fill out the form below to book an appointment.</p>
+            </div>
+            <form class="contact-form">
+                <h2>Personal Information</h2>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                
+                <h2>Biographical Information</h2>
+                <input type="number" name="age" placeholder="Your Age" required>
+                <select name="gender" required>
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+                
+                <h2>Geographical Data</h2>
+                <input type="text" name="address" placeholder="Your Address" required>
+                <input type="text" name="city" placeholder="City" required>
+                <input type="text" name="state" placeholder="State/Province" required>
+                <input type="text" name="country" placeholder="Country" required>
+                <input type="text" name="zip" placeholder="ZIP/Postal Code" required>
+                
+                <h2>Appointment Details</h2>
+                <textarea rows="5" name="message" placeholder="Your Message or Reason for Appointment" required></textarea>
+                <button type="submit">Book Appointment</button>
+            </form>
+        </div>
+    </body>
+    <footer>
+        <p>&copy; 2023 International Healthcare Booking System. All rights reserved.</p>
+    </footer>
+    <script src="components.js"></script>
+</html>
