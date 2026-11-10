@@ -1,56 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Appointment Form - International Healthcare Booking System</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header style="background-image: url('https://media.istockphoto.com/id/1421323821/vector/circle-with-transition-line-elements-from-white-to-black-abstract-geometric-art-line.jpg?s=1024x1024&w=is&k=20&c=bwDYL6JbbYhh5A_4qeTHYhRvHOhdaFpPmRGSsmVJW2s='); background-size: cover; background-position: center; padding: 20px; text-align: center;">
-            <h1>International Healthcare Booking System</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="meet.html">Our Team</a>
-                <a href="testimonials.html">Testimonials</a>
-                <a href="appointment.html">Book Appointment</a>
-            </nav>
-        </header>
-        <section id="appointment">
-            <h2>Book an Appointment</h2>
-            <form action="submit_appointment.php" method="post">
-                <label for="name">Full Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
-                
-                <label for="doctor">Select Doctor:</label>
-                <select id="doctor" name="doctor" required>
-                    <option value="Dr. John Doe">Dr. John Doe - Chief Medical Officer</option>
-                    <option value="Dr. Jane Smith">Dr. Jane Smith - Senior Surgeon</option>
-                    <option value="Dr. Emily Johnson">Dr. Emily Johnson - Pediatric Specialist</option>
-                    <option value="Dr. Michael Brown">Dr. Michael Brown - Cardiologist</option>
-                </select>
-                
-                <label for="date">Preferred Appointment Date:</label>
-                <input type="date" id="date" name="date" required>
-                
-                <label for="time">Preferred Appointment Time:</label>
-                <input type="time" id="time" name="time" required>
-                
-                <label for="message">Additional Notes:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-                
-                <button type="submit">Submit</button>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book an Appointment | ApexCare International Healthcare</title>
+  <meta name="description" content="Schedule verified clinical consultations, specialist appointments, and diagnostic sessions online.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="Healthcare%20Logo.png">
+</head>
+<body>
+
+  <!-- Top Clinical Triage Strip -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-item">
+        <span class="pulse-dot"></span>
+        <span>24/7 International Triage Desk Active</span>
+      </div>
+      <div class="top-bar-item">
+        <span>Emergency Triage:</span>
+        <a href="https://wa.me/254708746611" target="_blank" rel="noopener noreferrer" class="top-bar-link">+254 708 746 611 (WhatsApp)</a>
+      </div>
+      <div class="top-bar-item">
+        <span>Real-Time Appointment Confirmation System</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="Healthcare%20Logo.png" alt="ApexCare Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">ApexCare</span>
+          <span class="brand-sub">International Healthcare</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Clinical Services</a></li>
+          <li><a href="meet.html" class="nav-link">Medical Specialists</a></li>
+          <li><a href="testimonials.html" class="nav-link">Patient Reviews</a></li>
+          <li><a href="contact.html" class="nav-link">Emergency & Support</a></li>
+          <li><a href="appointment.html" class="nav-link active" style="color: var(--primary); font-weight: 700;">Book Online</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="appointment.html" class="btn btn-primary">Book Consultation</a>
+        <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 3rem 0; border-bottom: 1px solid var(--slate-200);">
+      <div class="container">
+        <div class="badge badge-primary" style="margin-bottom: 0.75rem;">Verified Clinical Scheduling</div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.5rem;">Book Your Medical Consultation</h1>
+        <p style="color: var(--slate-600); max-width: 650px;">Select your preferred department, board-certified physician, and consultation slot. Instant digital ticket generated upon confirmation.</p>
+      </div>
+    </section>
+
+    <!-- Booking Layout -->
+    <section class="booking-section">
+      <div class="container">
+        <div class="booking-layout">
+
+          <!-- Left: Multi-step interactive booking form -->
+          <div class="booking-card">
+            <form id="appointmentForm">
+
+              <!-- Step 1: Department -->
+              <div style="margin-bottom: 2rem;">
+                <h2 class="booking-step-title">
+                  <span class="step-num">1</span>
+                  Select Clinical Department
+                </h2>
+                <div class="form-group">
+                  <label class="form-label" for="deptSelect">Department / Clinical Discipline</label>
+                  <select id="deptSelect" class="form-select" required>
+                    <option value="general">General & Family Medicine</option>
+                    <option value="cardiology">Cardiology & Cardiovascular Center</option>
+                    <option value="pediatrics">Pediatrics & Neonatal Care</option>
+                    <option value="surgery">Orthopedics & Surgical Care</option>
+                    <option value="diagnostics">Diagnostic & Laboratory Pathology</option>
+                    <option value="emergency">Emergency Medicine & Acute Care</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Step 2: Doctor Selection -->
+              <div style="margin-bottom: 2rem;">
+                <h2 class="booking-step-title">
+                  <span class="step-num">2</span>
+                  Choose Medical Practitioner
+                </h2>
+                <div class="form-group">
+                  <label class="form-label" for="doctorSelect">Assigned Specialist</label>
+                  <select id="doctorSelect" class="form-select" required>
+                    <option value="Dr. John Doe">Dr. John Doe, MD (CMO - Internal Medicine) - $120</option>
+                    <option value="Dr. Michael Brown">Dr. Michael Brown, FACC (Cardiology) - $160</option>
+                    <option value="Dr. Jane Smith">Dr. Jane Smith, FACS (Orthopedic Surgeon) - $180</option>
+                    <option value="Dr. Emily Johnson">Dr. Emily Johnson, FAAP (Pediatrics) - $110</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Step 3: Date & Slots -->
+              <div style="margin-bottom: 2rem;">
+                <h2 class="booking-step-title">
+                  <span class="step-num">3</span>
+                  Select Appointment Date & Time
+                </h2>
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                  <label class="form-label" for="dateInput">Consultation Date</label>
+                  <input type="date" id="dateInput" class="form-input" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Available Time Slots</label>
+                  <input type="hidden" id="selectedTime" value="09:00 AM">
+                  <div class="slot-picker">
+                    <button type="button" class="slot-btn selected" data-time="09:00 AM">09:00 AM</button>
+                    <button type="button" class="slot-btn" data-time="10:30 AM">10:30 AM</button>
+                    <button type="button" class="slot-btn" data-time="11:45 AM">11:45 AM</button>
+                    <button type="button" class="slot-btn" data-time="01:30 PM">01:30 PM</button>
+                    <button type="button" class="slot-btn" data-time="02:45 PM">02:45 PM</button>
+                    <button type="button" class="slot-btn" data-time="04:00 PM">04:00 PM</button>
+                    <button type="button" class="slot-btn" data-time="05:30 PM">05:30 PM</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Step 4: Consultation Mode -->
+              <div style="margin-bottom: 2rem;">
+                <h2 class="booking-step-title">
+                  <span class="step-num">4</span>
+                  Consultation Format
+                </h2>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                  <label style="border: 1px solid var(--slate-300); padding: 1rem; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.75rem; cursor: pointer; background: var(--slate-50);">
+                    <input type="radio" name="consultationMode" value="In-Person Hospital Visit" checked>
+                    <div>
+                      <div style="font-weight: 700; font-size: 0.9rem;">🏥 In-Person Visit</div>
+                      <div style="font-size: 0.75rem; color: var(--slate-500);">Main Hospital Facility</div>
+                    </div>
+                  </label>
+
+                  <label style="border: 1px solid var(--slate-300); padding: 1rem; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 0.75rem; cursor: pointer; background: var(--slate-50);">
+                    <input type="radio" name="consultationMode" value="Secure Telemedicine Video">
+                    <div>
+                      <div style="font-weight: 700; font-size: 0.9rem;">💻 Virtual Telehealth</div>
+                      <div style="font-size: 0.75rem; color: var(--slate-500);">HD Encrypted Video Call</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Step 5: Patient Details -->
+              <div style="margin-bottom: 2.5rem;">
+                <h2 class="booking-step-title">
+                  <span class="step-num">5</span>
+                  Patient Information
+                </h2>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+                  <div class="form-group">
+                    <label class="form-label" for="patientName">Full Name *</label>
+                    <input type="text" id="patientName" class="form-input" placeholder="e.g. Philip Maina" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="patientPhone">Phone Number *</label>
+                    <input type="tel" id="patientPhone" class="form-input" placeholder="+254 700 000 000" required>
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                  <label class="form-label" for="patientEmail">Email Address *</label>
+                  <input type="email" id="patientEmail" class="form-input" placeholder="patient@example.com" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="patientNotes">Reason for Visit / Clinical Symptoms (Optional)</label>
+                  <textarea id="patientNotes" class="form-textarea" rows="3" placeholder="Briefly describe any symptoms, prior diagnoses, or specific requirements..."></textarea>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem; font-size: 1.05rem;">
+                Confirm & Generate Clinical Booking Voucher ➔
+              </button>
             </form>
-        </section>
-        <footer>
-            <p>&copy; 2023 International Healthcare Booking System. All rights reserved.</p>
-        </footer>
-    </body>
+          </div>
+
+          <!-- Right: Live Summary Slip & Help -->
+          <div>
+            <div class="summary-card">
+              <div class="summary-header">
+                <div class="summary-title">Appointment Voucher Preview</div>
+                <div class="summary-sub">Real-time confirmation details</div>
+              </div>
+
+              <div class="summary-rows">
+                <div class="summary-row">
+                  <span class="summary-label">Department:</span>
+                  <span class="summary-value" id="sumDept">General & Family Medicine</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Specialist:</span>
+                  <span class="summary-value" id="sumDoctor">Dr. John Doe</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Date:</span>
+                  <span class="summary-value" id="sumDate">Today</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Time:</span>
+                  <span class="summary-value" id="sumTime">09:00 AM</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Format:</span>
+                  <span class="summary-value" id="sumMode">In-Person Hospital Visit</span>
+                </div>
+                <div class="summary-row">
+                  <span class="summary-label">Status:</span>
+                  <span class="summary-value" style="color: var(--emerald-500); font-weight: 700;">● Ready to Confirm</span>
+                </div>
+              </div>
+
+              <div style="background: var(--slate-50); border: 1px dashed var(--slate-300); border-radius: var(--radius-sm); padding: 1rem; font-size: 0.8125rem; color: var(--slate-600); margin-bottom: 1.25rem;">
+                <strong>📍 Clinical Location:</strong><br>
+                ApexCare Regional Diagnostic Wing, Suite 402<br>
+                Nairobi / Global Telehealth Hub
+              </div>
+
+              <div style="font-size: 0.8125rem; color: var(--slate-500); line-height: 1.5;">
+                Need urgent triage or rescheduling assistance? Call our clinical desk:
+                <a href="https://wa.me/254708746611" target="_blank" style="color: var(--primary); font-weight: 700; display: block; margin-top: 0.25rem;">
+                  📞 +254 708 746 611 (WhatsApp Triage)
+                </a>
+              </div>
+            </div>
+
+            <!-- Stored bookings lookup -->
+            <div class="booking-card" style="margin-top: 1.5rem; padding: 1.5rem;">
+              <h3 style="font-size: 1.05rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.5rem;">Recent Bookings in this Browser</h3>
+              <p style="font-size: 0.8125rem; color: var(--slate-500); margin-bottom: 1rem;">Appointments saved locally on your device:</p>
+              <div id="localBookingsList" style="font-size: 0.8125rem; color: var(--slate-600);">
+                <!-- Populated dynamically -->
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Clinical Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <img src="Healthcare%20Logo.png" alt="ApexCare Logo" class="brand-logo">
+            <div class="brand-text">
+              <span class="brand-name">ApexCare</span>
+              <span class="brand-sub">International Healthcare</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            A comprehensive, patient-centric digital clinical booking system facilitating seamless appointments, board-certified physician consultations, and international emergency triage.
+          </p>
+          <div style="font-size: 0.8125rem; color: var(--slate-400);">
+            <strong>Emergency Hotline:</strong> +254 708 746 611<br>
+            <strong>Support:</strong> philipmaina637@gmail.com
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="services.html" class="footer-link">Clinical Services</a></li>
+            <li><a href="meet.html" class="footer-link">Our Medical Team</a></li>
+            <li><a href="testimonials.html" class="footer-link">Patient Reviews</a></li>
+            <li><a href="appointment.html" class="footer-link">Schedule Appointment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Clinical Care</div>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link">Internal Medicine</a></li>
+            <li><a href="services.html" class="footer-link">Cardiology Center</a></li>
+            <li><a href="services.html" class="footer-link">Pediatric Ward</a></li>
+            <li><a href="services.html" class="footer-link">Diagnostic Laboratories</a></li>
+            <li><a href="contact.html" class="footer-link">Emergency Triage</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Quality Standards</div>
+          <p style="font-size: 0.8125rem; line-height: 1.6; color: var(--slate-400); margin-bottom: 1rem;">
+            Compliant with international clinical data governance protocols and patient confidentiality best practices.
+          </p>
+          <div class="badge badge-neutral" style="background: rgba(255, 255, 255, 0.08); color: #94a3b8;">
+            ISO 27001 & HIPAA Aligned
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ApexCare International Healthcare Booking System. All rights reserved.</div>
+        <div class="footer-author">
+          Engineered by <a href="https://kivice.github.io/" target="_blank">Philip Maina (@Kivice)</a> · Kirinyaga University
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="components.js"></script>
+  <script>
+    // Quick script to populate local bookings
+    document.addEventListener('DOMContentLoaded', () => {
+      const list = document.getElementById('localBookingsList');
+      if (list) {
+        const saved = JSON.parse(localStorage.getItem('apex_appointments') || '[]');
+        if (saved.length === 0) {
+          list.innerHTML = '<div style="color: #94a3b8; font-style: italic;">No appointments booked yet on this device.</div>';
+        } else {
+          list.innerHTML = saved.slice(0, 3).map(a => `
+            <div style="padding: 0.6rem 0; border-bottom: 1px solid #e2e8f0;">
+              <strong style="color: #0284c7;">${a.id}</strong> — ${a.doctor}<br>
+              <span style="color: #64748b;">${a.date} at ${a.time} (${a.dept})</span>
+            </div>
+          `).join('');
+        }
+      }
+    });
+  </script>
+</body>
 </html>

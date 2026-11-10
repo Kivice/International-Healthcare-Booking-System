@@ -1,471 +1,1443 @@
-/* General Styles */
+/* ==========================================================================
+   APEXCARE INTERNATIONAL HEALTHCARE BOOKING SYSTEM
+   Modern Clinical Design System & Responsive Stylesheet
+   Engineered by Philip Maina (@Kivice)
+   ========================================================================== */
+
+:root {
+  /* Color Palette */
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-light: #e0f2fe;
+  --primary-glow: rgba(2, 132, 199, 0.18);
+  
+  --teal: #0d9488;
+  --teal-light: #ccfbf1;
+  
+  --navy-950: #070d18;
+  --navy-900: #0f172a;
+  --navy-800: #1e293b;
+  --navy-700: #334155;
+  --slate-600: #475569;
+  --slate-500: #64748b;
+  --slate-400: #94a3b8;
+  --slate-300: #cbd5e1;
+  --slate-200: #e2e8f0;
+  --slate-100: #f1f5f9;
+  --slate-50: #f8fafc;
+  --white: #ffffff;
+  
+  --emerald-500: #10b981;
+  --emerald-50: #ecfdf5;
+  --rose-500: #f43f5e;
+  --rose-50: #fff1f2;
+  --amber-500: #f59e0b;
+  
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  
+  /* Geometry & Shadows */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.05);
+  --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08), 0 2px 6px -2px rgba(15, 23, 42, 0.05);
+  --shadow-lg: 0 12px 24px -4px rgba(15, 23, 42, 0.1), 0 4px 8px -2px rgba(15, 23, 42, 0.04);
+  --shadow-xl: 0 20px 35px -5px rgba(15, 23, 42, 0.12), 0 10px 15px -5px rgba(15, 23, 42, 0.04);
+  
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s ease;
+  --max-width: 1240px;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-sans);
+  color: var(--navy-900);
+  background-color: var(--slate-50);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--slate-50);
+  color: var(--navy-900);
+  overflow-x: hidden;
 }
 
-header {
-    background-image: url('https://media.istockphoto.com/id/1421323821/vector/circle-with-transition-line-elements-from-white-to-black-abstract-geometric-art-line.jpg?s=1024x1024&w=is&k=20&c=bwDYL6JbbYhh5A_4qeTHYhRvHOhdaFpPmRGSsmVJW2s=');
-    background-size:auto;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 20px;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* Main Content Styles */
-main {
-    padding: 2rem;
-    background-color: #ffffff;
-    max-width: 800px;
-    margin: 2rem auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-main h2 {
-    font-size: 1.8rem;
-    color: #0077b6;
-    margin-bottom: 1rem;
-    text-align: center;
+button, input, select, textarea {
+  font: inherit;
 }
 
-main p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-main ul, main ol {
-    margin: 1rem 0;
-    padding-left: 1.5rem;
-    color: #333;
+/* ==========================================================================
+   Top Clinical Triage Strip
+   ========================================================================== */
+.top-bar {
+  background: var(--navy-950);
+  color: var(--slate-300);
+  font-size: 0.8125rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-main ul li, main ol li {
-    margin-bottom: 0.5rem;
-    font-size: 1rem;
-    line-height: 1.4;
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-main nav {
-    margin-top: 1rem;
-    text-align: center;
-}
-main nav a {
-    color: #0077b6;
-    text-decoration: none;
-    font-weight: bold;
-    margin: 0 1rem;
+.top-bar-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
 
-/* Swiper Styles for Testimonials */
-.swiper.mySwipertesti {
-    padding: 2rem 0;
+.top-bar-item .pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--emerald-500);
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  animation: pulse-ring 2s infinite;
 }
 
-.swiper.mySwipertesti .swiper-wrapper {
-    display: flex;
-    gap: 1rem;
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+  70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
 }
 
-.swiper.mySwipertesti .swiper-slide {
-    max-width: 300px;
-    margin: auto;
+.top-bar-link {
+  color: #38bdf8;
+  font-weight: 600;
+  transition: color var(--transition-fast);
 }
 
-.swiper.mySwiperservices .swiper-wrapper {
-    display: flex;
-    gap: 1rem;
+.top-bar-link:hover {
+  color: #7dd3fc;
+  text-decoration: underline;
 }
 
-.swiper.mySwiperservices .swiper-slide {
-    max-width: 300px;
-    margin: auto;
-    text-align: center;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+/* ==========================================================================
+   Header & Navigation
+   ========================================================================== */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--slate-200);
+  transition: box-shadow var(--transition-normal);
 }
 
-.swiper.mySwiperservices .swiper-slide img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
 }
 
-.swiper.mySwiperservices .swiper-slide h3 {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 0.5rem 0;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--navy-900);
+  letter-spacing: -0.02em;
 }
 
-.swiper.mySwiperservices .swiper-slide p {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 0;
-}
-/* Header Styles */
-header {
-    background-color: #0077b6;
-    color: white;
-    padding: 1rem 2rem;
-    text-align: center;
+.brand-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: var(--slate-100);
+  padding: 3px;
+  box-shadow: var(--shadow-sm);
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2rem;
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
 }
 
-header nav {
-    margin-top: 1rem;
+.brand-name {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--navy-950);
 }
 
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 1rem;
-    font-weight: bold;
+.brand-sub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--primary);
 }
 
-header nav a:hover {
-    text-decoration: underline;
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  list-style: none;
 }
 
-/* Testimonials Section */
-#testimonials {
-    padding: 2rem;
-    background-color: #e3f2fd;
-    text-align: center;
+.nav-link {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--slate-600);
+  padding: 0.5rem 0.25rem;
+  position: relative;
+  transition: color var(--transition-fast);
 }
 
-#testimonials h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #0077b6;
+.nav-link:hover {
+  color: var(--primary);
 }
 
-.swiper-slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 1rem;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.nav-link.active {
+  color: var(--primary);
 }
 
-.swiper-slide img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    object-fit: cover;
+.nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--primary);
+  border-radius: 2px;
 }
 
-.swiper-slide p {
-    margin: 0.5rem 0;
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
-.swiper-slide strong {
-    color: #0077b6;
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--navy-900);
+  padding: 0.5rem;
 }
 
-/* Swiper Pagination */
-.swiper-pagination {
-    margin-top: 1rem;
+/* ==========================================================================
+   Buttons & Pills
+   ========================================================================== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  padding: 0.6875rem 1.35rem;
+  border-radius: var(--radius-full);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
 }
 
-/* Footer Styles */
-footer {
-    background-color: #0077b6;
-    color: white;
-    text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+.btn-primary {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: 0 4px 14px var(--primary-glow);
 }
 
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.28);
 }
 
-/* Team Section */
-#team {
-    padding: 2rem;
-    background-color: #f1f1f1;
-    text-align: center;
+.btn-secondary {
+  background: var(--white);
+  color: var(--navy-800);
+  border-color: var(--slate-300);
+  box-shadow: var(--shadow-sm);
 }
 
-#team h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #0077b6;
+.btn-secondary:hover {
+  background: var(--slate-50);
+  border-color: var(--slate-400);
+  color: var(--navy-950);
 }
 
-.team-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    padding: 20px;
+.btn-outline {
+  background: transparent;
+  color: var(--primary);
+  border-color: var(--primary);
 }
 
-.team-member {
-    text-align: center;
-    max-width: 200px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+.btn-outline:hover {
+  background: var(--primary-light);
 }
 
-.team-member img {
-    width: 100%;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    object-fit: cover;
+.btn-emergency {
+  background: var(--rose-500);
+  color: var(--white);
 }
 
-.team-member h3 {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 0.5rem 0;
+.btn-emergency:hover {
+  background: #e11d48;
 }
 
-.team-member p {
-    font-size: 0.9rem;
-    color: #555;
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
-/* Appointment Section */
-#appointment {
-    padding: 2rem;
-    background-color: #ffffff;
-    max-width: 600px;
-    margin: 2rem auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.badge-primary {
+  background: var(--primary-light);
+  color: var(--primary-hover);
 }
 
-#appointment h2 {
-    font-size: 1.8rem;
-    color: #0077b6;
-    text-align: center;
-    margin-bottom: 1.5rem;
+.badge-success {
+  background: var(--emerald-50);
+  color: #047857;
 }
 
-#appointment form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+.badge-neutral {
+  background: var(--slate-100);
+  color: var(--slate-600);
 }
 
-#appointment label {
-    font-size: 1rem;
-    color: #333;
-    font-weight: bold;
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 30%, #f8fafc 100%);
+  padding: 4.5rem 0 3.5rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--slate-200);
 }
 
-#appointment input,
-#appointment select,
-#appointment textarea {
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
 }
 
-#appointment input:focus,
-#appointment select:focus,
-#appointment textarea:focus {
-    border-color: #0077b6;
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 119, 182, 0.5);
+.hero-content {
+  max-width: 650px;
 }
 
-#appointment button {
-    padding: 0.8rem;
-    font-size: 1rem;
-    background-color: #0077b6;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
+.hero-pill {
+  margin-bottom: 1.25rem;
 }
 
-#appointment button:hover {
-    background-color: #005f8a;
+.hero-title {
+  font-size: clamp(2.25rem, 4vw, 3.25rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  color: var(--navy-950);
+  margin-bottom: 1.25rem;
 }
 
-/* Services Section */
-#services {
-    padding: 2rem;
-    background-color: #f9f9f9;
-    text-align: center;
+.hero-title .highlight {
+  color: var(--primary);
+  background: linear-gradient(120deg, #0284c7 0%, #0d9488 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-#services h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    color: #0077b6;
+.hero-desc {
+  font-size: 1.125rem;
+  color: var(--slate-600);
+  line-height: 1.65;
+  margin-bottom: 2rem;
 }
 
-.swiper.mySwiperservices {
-    padding: 2rem 0;
+.hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
 
-.swiper-slide img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-.swiper-slide h3 {
-    font-size: 1.2rem;
-    color: #333;
-    margin: 0.5rem 0;
+.hero-stat-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: var(--navy-950);
+  line-height: 1;
+  margin-bottom: 0.35rem;
 }
 
-.swiper-slide p {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 0;
+.hero-stat-label {
+  font-size: 0.8125rem;
+  color: var(--slate-500);
+  font-weight: 500;
 }
 
-.swiper-button-next,
-.swiper-button-prev {
-    color: #0077b6;
+.hero-visual {
+  position: relative;
 }
 
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-    color: #005f8a;
+.hero-card-preview {
+  position: relative;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--slate-200);
 }
 
-/* Contact Form Section */
-.contact-container {
-    padding: 2rem;
-    background-color: #f1f1f1;
-    max-width: 800px;
-    margin: 2rem auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.hero-image {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
 }
 
-.contact-header {
-    text-align: center;
-    margin-bottom: 2rem;
+.hero-floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--slate-200);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
 }
 
-.contact-header h1 {
-    font-size: 2rem;
-    color: #0077b6;
-    margin-bottom: 0.5rem;
+.floating-1 {
+  bottom: -20px;
+  left: -20px;
 }
 
-.contact-header p {
-    font-size: 1rem;
-    color: #555;
+.floating-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--emerald-50);
+  color: var(--emerald-500);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+.floating-title {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--navy-900);
 }
 
-.contact-form h2 {
-    font-size: 1.5rem;
-    color: #0077b6;
-    margin-bottom: 0.5rem;
+.floating-sub {
+  font-size: 0.775rem;
+  color: var(--slate-500);
 }
 
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-    padding: 0.8rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    box-sizing: border-box;
+/* ==========================================================================
+   Quick Booking Widget (Homepage)
+   ========================================================================== */
+.quick-booking-bar {
+  margin-top: -30px;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 4rem;
 }
 
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-    border-color: #0077b6;
-    outline: none;
-    box-shadow: 0 0 4px rgba(0, 119, 182, 0.5);
+.quick-booking-box {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 2rem;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--slate-200);
 }
 
-.contact-form button {
-    padding: 0.8rem;
-    font-size: 1rem;
-    background-color: #0077b6;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
+.quick-booking-form {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr) auto;
+  gap: 1.25rem;
+  align-items: end;
 }
 
-.contact-form button:hover {
-    background-color: #005f8a;
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
-/* Media Queries */
+.form-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--navy-800);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--slate-300);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--navy-900);
+  font-size: 0.9375rem;
+  transition: all var(--transition-fast);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px var(--primary-glow);
+}
+
+/* ==========================================================================
+   Section Headers & Common Blocks
+   ========================================================================== */
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background-color: var(--white);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-pill {
+  margin-bottom: 0.85rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  color: var(--navy-950);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.section-desc {
+  font-size: 1.05rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Pillars / Why Choose Us
+   ========================================================================== */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.75rem;
+}
+
+.pillar-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.pillar-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.pillar-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--navy-950);
+  margin-bottom: 0.65rem;
+}
+
+.pillar-text {
+  font-size: 0.9375rem;
+  color: var(--slate-600);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   Services Grid
+   ========================================================================== */
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.75rem;
+}
+
+.filter-tab {
+  padding: 0.55rem 1.25rem;
+  border-radius: var(--radius-full);
+  background: var(--slate-100);
+  color: var(--slate-600);
+  font-size: 0.875rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-tab:hover {
+  background: var(--slate-200);
+  color: var(--navy-900);
+}
+
+.filter-tab.active {
+  background: var(--primary);
+  color: var(--white);
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--slate-300);
+}
+
+.service-image-wrap {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+  background: var(--slate-100);
+}
+
+.service-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.service-card:hover .service-image {
+  transform: scale(1.04);
+}
+
+.service-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.service-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-950);
+  margin-bottom: 0.6rem;
+}
+
+.service-desc {
+  font-size: 0.925rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.service-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--slate-100);
+  margin-top: auto;
+}
+
+.service-price {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--slate-500);
+}
+
+.service-price strong {
+  font-size: 1.15rem;
+  color: var(--navy-950);
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   Doctors / Specialists Directory
+   ========================================================================== */
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 2rem;
+}
+
+.doctor-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-light);
+}
+
+.doctor-photo-wrap {
+  position: relative;
+  height: 280px;
+  background: var(--slate-100);
+  overflow: hidden;
+}
+
+.doctor-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.4s ease;
+}
+
+.doctor-card:hover .doctor-photo {
+  transform: scale(1.04);
+}
+
+.doctor-status {
+  position: absolute;
+  bottom: 0.85rem;
+  left: 0.85rem;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  color: var(--white);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.doctor-status .status-indicator {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--emerald-500);
+}
+
+.doctor-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.doctor-name {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--navy-950);
+  margin-bottom: 0.25rem;
+}
+
+.doctor-specialty {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.85rem;
+}
+
+.doctor-bio {
+  font-size: 0.875rem;
+  color: var(--slate-600);
+  line-height: 1.55;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.doctor-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+  border-top: 1px solid var(--slate-100);
+  margin-top: auto;
+}
+
+.doctor-rating {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--navy-800);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* ==========================================================================
+   Testimonials
+   ========================================================================== */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-normal);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-light);
+}
+
+.testimonial-stars {
+  color: var(--amber-500);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.testimonial-quote {
+  font-size: 0.975rem;
+  color: var(--slate-600);
+  line-height: 1.65;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-top: auto;
+}
+
+.author-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-light);
+}
+
+.author-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--navy-950);
+}
+
+.author-location {
+  font-size: 0.8rem;
+  color: var(--slate-500);
+}
+
+/* ==========================================================================
+   Appointment Engine (Dedicated Page)
+   ========================================================================== */
+.booking-section {
+  padding: 3.5rem 0 5rem;
+}
+
+.booking-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.booking-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-md);
+}
+
+.booking-step-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--navy-950);
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 0.875rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slot-picker {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(95px, 1fr));
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.slot-btn {
+  padding: 0.65rem 0.5rem;
+  border: 1px solid var(--slate-300);
+  background: var(--slate-50);
+  border-radius: var(--radius-sm);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--navy-800);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: center;
+}
+
+.slot-btn:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-hover);
+}
+
+.slot-btn.selected {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: var(--white);
+  box-shadow: 0 2px 8px var(--primary-glow);
+}
+
+/* Appointment Slip / Summary Card */
+.summary-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  position: sticky;
+  top: 96px;
+}
+
+.summary-header {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--slate-200);
+  margin-bottom: 1.25rem;
+}
+
+.summary-title {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--navy-950);
+}
+
+.summary-sub {
+  font-size: 0.8125rem;
+  color: var(--slate-500);
+}
+
+.summary-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.875rem;
+}
+
+.summary-label {
+  color: var(--slate-500);
+}
+
+.summary-value {
+  font-weight: 600;
+  color: var(--navy-900);
+  text-align: right;
+}
+
+.ticket-container {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.ticket-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary);
+}
+
+.ticket-code {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* ==========================================================================
+   Emergency & Contact Portal
+   ========================================================================== */
+.emergency-banner {
+  background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 100%);
+  border: 1px solid #fecdd3;
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.5rem;
+  margin-bottom: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.emergency-info h3 {
+  color: #9f1239;
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin-bottom: 0.35rem;
+}
+
+.emergency-info p {
+  color: #881337;
+  font-size: 0.95rem;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2.5rem;
+}
+
+.contact-card {
+  background: var(--white);
+  border: 1px solid var(--slate-200);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
+  background: var(--slate-50);
+  border: 1px solid var(--slate-200);
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.contact-label {
+  font-size: 0.775rem;
+  font-weight: 700;
+  color: var(--slate-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.contact-val {
+  font-weight: 700;
+  color: var(--navy-900);
+  font-size: 1.05rem;
+  margin-top: 0.15rem;
+}
+
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+.site-footer {
+  background: var(--navy-950);
+  color: var(--slate-400);
+  padding: 4.5rem 0 2rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr repeat(3, 1fr);
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+}
+
+.footer-brand {
+  max-width: 360px;
+}
+
+.footer-brand .brand {
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-brand .brand-name {
+  color: var(--white);
+}
+
+.footer-desc {
+  font-size: 0.9rem;
+  color: var(--slate-400);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.footer-col-title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.25rem;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  font-size: 0.875rem;
+  color: var(--slate-400);
+  transition: color var(--transition-fast);
+}
+
+.footer-link:hover {
+  color: #38bdf8;
+}
+
+.footer-bottom {
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.8125rem;
+  color: var(--slate-500);
+}
+
+.footer-author {
+  color: var(--slate-300);
+  font-weight: 600;
+}
+
+.footer-author a {
+  color: #38bdf8;
+}
+
+/* ==========================================================================
+   Toast Notification & Modal
+   ========================================================================== */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  background: var(--navy-900);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-xl);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  border-left: 4px solid var(--emerald-500);
+  transform: translateY(100px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toast.show {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-box {
+  background: var(--white);
+  width: 100%;
+  max-width: 540px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  padding: 2.25rem;
+  position: relative;
+  transform: scale(0.95);
+  transition: transform var(--transition-normal);
+}
+
+.modal-backdrop.open .modal-box {
+  transform: scale(1);
+}
+
+.modal-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--slate-400);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.modal-close:hover {
+  color: var(--navy-900);
+}
+
+/* ==========================================================================
+   Responsive Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .hero-visual {
+    order: -1;
+  }
+  
+  .hero-image {
+    height: 300px;
+  }
+  
+  .quick-booking-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .booking-layout, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
-    .team-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .team-member {
-        max-width: 90%;
-    }
-
-    #appointment {
-        width: 90%;
-    }
+  .top-bar {
+    display: none;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 74px;
+    left: 0;
+    right: 0;
+    background: var(--white);
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.25rem;
+    border-bottom: 1px solid var(--slate-200);
+    box-shadow: var(--shadow-lg);
+    display: none;
+  }
+  
+  .nav-links.open {
+    display: flex;
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .nav-actions .btn {
+    display: none;
+  }
+  
+  .hero {
+    padding: 3rem 0 2.5rem;
+  }
+  
+  .quick-booking-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .services-grid, .doctors-grid, .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header nav a {
-        font-size: 0.9rem;
-    }
-
-    #testimonials h2,
-    #team h2,
-    #services h2 {
-        font-size: 1.5rem;
-    }
-
-    .swiper-slide img {
-        width: 80%;
-        height: auto;
-    }
-}
-/* End of CSS */

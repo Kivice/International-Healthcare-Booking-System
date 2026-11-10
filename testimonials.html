@@ -1,53 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>International Healthcare Booking System</title>
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header style="background-image: url('https://media.istockphoto.com/id/1421323821/vector/circle-with-transition-line-elements-from-white-to-black-abstract-geometric-art-line.jpg?s=1024x1024&w=is&k=20&c=bwDYL6JbbYhh5A_4qeTHYhRvHOhdaFpPmRGSsmVJW2s='); background-size: cover; background-position: center; padding: 20px; text-align: center;">
-            <h1>International Healthcare Booking System</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="meet.html">Our Team</a>
-                <a href="testimonials.html">Testimonials</a>
-                <a href="appointment.html">Book Appointment</a>
-            </nav>
-        </header>
-        <section id="testimonials">
-            <h2>What Our Clients Say</h2>
-            <div class="swiper mySwipertesti">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="C:\PLP FEB COHORT\Web Dev\PLP Peer-Group Assignment\International-Healthcare-Booking-System\Lindiwe.jpg" alt="Lindiwe Makhasela">
-                        <p>"The doctors were incredibly attentive and professional. I felt cared for every step of the way!"</p>
-                        <p><strong>- Lindiwe Makhasela, South Africa</strong></p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="C:\PLP FEB COHORT\Web Dev\PLP Peer-Group Assignment\International-Healthcare-Booking-System\Wanjiru.jpg" alt="Wanjiru Mohamed">
-                        <p>"The booking process was seamless, and the staff was very friendly. I highly recommend their services!"</p>
-                        <p><strong>- Wanjiru Mohamed, Kenya</strong></p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="C:\PLP FEB COHORT\Web Dev\PLP Peer-Group Assignment\International-Healthcare-Booking-System\Fang.jpg" alt="Fang Xing">
-                        <p>"I was impressed by the state-of-the-art facilities and the expertise of the medical team."</p>
-                        <p><strong>- Fang Xing, China</strong></p>
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="C:\PLP FEB COHORT\Web Dev\PLP Peer-Group Assignment\International-Healthcare-Booking-System\Ella Smith.jpg" alt="Ella Smith">
-                        <p>"Exceptional service! The team went above and beyond to ensure my comfort and care."</p>
-                        <p><strong>- Ella Smith, United States</strong></p>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Patient Testimonials | ApexCare International Healthcare</title>
+  <meta name="description" content="Read real reviews and clinical feedback from verified patients across Kenya, South Africa, China, and the USA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" type="image/png" href="Healthcare%20Logo.png">
+</head>
+<body>
+
+  <!-- Top Clinical Triage Strip -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <div class="top-bar-item">
+        <span class="pulse-dot"></span>
+        <span>24/7 International Triage Desk Active</span>
+      </div>
+      <div class="top-bar-item">
+        <span>Emergency Triage:</span>
+        <a href="https://wa.me/254708746611" target="_blank" rel="noopener noreferrer" class="top-bar-link">+254 708 746 611 (WhatsApp)</a>
+      </div>
+      <div class="top-bar-item">
+        <span>Verified Patient Review System</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="container nav-container">
+      <a href="index.html" class="brand">
+        <img src="Healthcare%20Logo.png" alt="ApexCare Logo" class="brand-logo">
+        <div class="brand-text">
+          <span class="brand-name">ApexCare</span>
+          <span class="brand-sub">International Healthcare</span>
+        </div>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Clinical Services</a></li>
+          <li><a href="meet.html" class="nav-link">Medical Specialists</a></li>
+          <li><a href="testimonials.html" class="nav-link active">Patient Reviews</a></li>
+          <li><a href="contact.html" class="nav-link">Emergency & Support</a></li>
+          <li><a href="appointment.html" class="nav-link" style="color: var(--primary); font-weight: 700;">Book Online</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="appointment.html" class="btn btn-primary">Book Consultation</a>
+        <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Header -->
+    <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 3.5rem 0; border-bottom: 1px solid var(--slate-200);">
+      <div class="container">
+        <div class="badge badge-success" style="margin-bottom: 0.75rem;">Verified Clinical Outcomes</div>
+        <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.5rem;">Patient Stories & Experiences</h1>
+        <p style="color: var(--slate-600); max-width: 680px;">Discover how patients across diverse international communities experience the clinical empathy, medical precision, and ease of ApexCare's booking system.</p>
+      </div>
+    </section>
+
+    <!-- Satisfaction Metrics Banner -->
+    <section style="padding: 2.5rem 0; background: var(--white); border-bottom: 1px solid var(--slate-200);">
+      <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; text-align: center;">
+          <div>
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--navy-950);">99.4%</div>
+            <div style="font-size: 0.875rem; color: var(--slate-500); font-weight: 600;">Overall Patient Satisfaction</div>
+          </div>
+          <div>
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--primary);">15,200+</div>
+            <div style="font-size: 0.875rem; color: var(--slate-500); font-weight: 600;">Appointments Dispatched</div>
+          </div>
+          <div>
+            <div style="font-size: 2.25rem; font-weight: 800; color: #f59e0b;">4.96 / 5.0</div>
+            <div style="font-size: 0.875rem; color: var(--slate-500); font-weight: 600;">Clinical Staff Average Rating</div>
+          </div>
+          <div>
+            <div style="font-size: 2.25rem; font-weight: 800; color: var(--emerald-500);">&lt; 3 Min</div>
+            <div style="font-size: 0.875rem; color: var(--slate-500); font-weight: 600;">Average Triage Connection</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Grid -->
+    <section class="section">
+      <div class="container">
+        <div class="testimonials-grid">
+
+          <!-- Patient 1: Lindiwe -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="badge badge-success" style="align-self: flex-start; margin-bottom: 0.85rem;">Verified Patient · Orthopedics</div>
+            <p class="testimonial-quote">
+              "The doctors were incredibly attentive and professional. I felt cared for every step of the way! After my knee surgery with Dr. Jane Smith, the digital follow-up consultations saved me hours of travel."
+            </p>
+            <div class="testimonial-author">
+              <img src="Lindiwe.jpg" alt="Lindiwe Makhasela" class="author-avatar">
+              <div>
+                <div class="author-name">Lindiwe Makhasela</div>
+                <div class="author-location">Johannesburg, South Africa · Treated 2026</div>
+              </div>
             </div>
-        </section>
-    </body>
-        <footer>
-            <p>&copy; 2023 International Healthcare Booking System. All rights reserved.</p>
-        </footer>
-        <script src="components.js"></script>
+          </div>
+
+          <!-- Patient 2: Wanjiru -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="badge badge-success" style="align-self: flex-start; margin-bottom: 0.85rem;">Verified Patient · Family Medicine</div>
+            <p class="testimonial-quote">
+              "The booking process was seamless, and the medical staff was extraordinarily friendly. Booking an appointment for my family used to take days of phone tags; here I got my voucher in under two minutes!"
+            </p>
+            <div class="testimonial-author">
+              <img src="Wanjiru.jpg" alt="Wanjiru Mohamed" class="author-avatar">
+              <div>
+                <div class="author-name">Wanjiru Mohamed</div>
+                <div class="author-location">Nairobi, Kenya · Treated 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Patient 3: Fang -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="badge badge-success" style="align-self: flex-start; margin-bottom: 0.85rem;">Verified Patient · Diagnostic Pathology</div>
+            <p class="testimonial-quote">
+              "I was deeply impressed by the state-of-the-art diagnostic facilities and the rapid turnaround of my pathology assessments. The laboratory portal delivered encrypted results right to my phone."
+            </p>
+            <div class="testimonial-author">
+              <img src="Fang.jpg" alt="Fang Xing" class="author-avatar">
+              <div>
+                <div class="author-name">Fang Xing</div>
+                <div class="author-location">Shanghai, China · Treated 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Patient 4: Ella -->
+          <div class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <div class="badge badge-success" style="align-self: flex-start; margin-bottom: 0.85rem;">Verified Patient · Telemedicine Video</div>
+            <p class="testimonial-quote">
+              "Exceptional service! As an international traveler needing urgent physician triage while abroad, the WhatsApp triage team connected me to Dr. Michael Brown in minutes. Outstanding experience!"
+            </p>
+            <div class="testimonial-author">
+              <img src="Ella%20Smith.jpg" alt="Ella Smith" class="author-avatar">
+              <div>
+                <div class="author-name">Ella Smith</div>
+                <div class="author-location">New York, United States · Treated 2026</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Dynamic User Submitted Reviews Container -->
+        <div id="customTestimonialsContainer" class="testimonials-grid" style="margin-top: 2rem;"></div>
+
+        <!-- Add Review Box -->
+        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 2.5rem; margin-top: 3.5rem; box-shadow: var(--shadow-sm);">
+          <div class="badge badge-primary" style="margin-bottom: 0.75rem;">Patient Voice</div>
+          <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.5rem;">Share Your Clinical Experience</h3>
+          <p style="color: var(--slate-600); font-size: 0.9375rem; margin-bottom: 2rem; max-width: 600px;">
+            Your feedback helps us continuously elevate our patient care standards and refine practitioner triage.
+          </p>
+
+          <form id="addTestimonialForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="tName">Your Full Name *</label>
+              <input type="text" id="tName" class="form-input" placeholder="e.g. David Mwangi" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tCountry">Location / Country *</label>
+              <input type="text" id="tCountry" class="form-input" placeholder="e.g. Mombasa, Kenya" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tDept">Clinical Department Visited</label>
+              <select id="tDept" class="form-select">
+                <option value="General Medicine">General Medicine</option>
+                <option value="Cardiology">Cardiology</option>
+                <option value="Orthopedic Surgery">Orthopedic Surgery</option>
+                <option value="Pediatrics">Pediatrics</option>
+                <option value="Diagnostic Laboratory">Diagnostic Laboratory</option>
+                <option value="Emergency Care">Emergency Care</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="tRating">Overall Rating</label>
+              <select id="tRating" class="form-select">
+                <option value="5">★★★★★ (5 / 5 - Outstanding)</option>
+                <option value="4">★★★★☆ (4 / 5 - Very Good)</option>
+                <option value="3">★★★☆☆ (3 / 5 - Satisfactory)</option>
+              </select>
+            </div>
+
+            <div class="form-group" style="grid-column: 1 / -1;">
+              <label class="form-label" for="tMessage">Your Review / Care Experience *</label>
+              <textarea id="tMessage" class="form-textarea" rows="3" placeholder="Tell us about your consultation, practitioner empathy, and booking experience..." required></textarea>
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <button type="submit" class="btn btn-primary" style="padding: 0.75rem 1.75rem;">
+                Publish Verified Feedback ➔
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Modern Clinical Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand">
+            <img src="Healthcare%20Logo.png" alt="ApexCare Logo" class="brand-logo">
+            <div class="brand-text">
+              <span class="brand-name">ApexCare</span>
+              <span class="brand-sub">International Healthcare</span>
+            </div>
+          </div>
+          <p class="footer-desc">
+            A comprehensive, patient-centric digital clinical booking system facilitating seamless appointments, board-certified physician consultations, and international emergency triage.
+          </p>
+          <div style="font-size: 0.8125rem; color: var(--slate-400);">
+            <strong>Emergency Hotline:</strong> +254 708 746 611<br>
+            <strong>Support:</strong> philipmaina637@gmail.com
+          </div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="services.html" class="footer-link">Clinical Services</a></li>
+            <li><a href="meet.html" class="footer-link">Our Medical Team</a></li>
+            <li><a href="testimonials.html" class="footer-link">Patient Reviews</a></li>
+            <li><a href="appointment.html" class="footer-link">Schedule Appointment</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Clinical Care</div>
+          <ul class="footer-links">
+            <li><a href="services.html" class="footer-link">Internal Medicine</a></li>
+            <li><a href="services.html" class="footer-link">Cardiology Center</a></li>
+            <li><a href="services.html" class="footer-link">Pediatric Ward</a></li>
+            <li><a href="services.html" class="footer-link">Diagnostic Laboratories</a></li>
+            <li><a href="contact.html" class="footer-link">Emergency Triage</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Quality Standards</div>
+          <p style="font-size: 0.8125rem; line-height: 1.6; color: var(--slate-400); margin-bottom: 1rem;">
+            Compliant with international clinical data governance protocols and patient confidentiality best practices.
+          </p>
+          <div class="badge badge-neutral" style="background: rgba(255, 255, 255, 0.08); color: #94a3b8;">
+            ISO 27001 & HIPAA Aligned
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 ApexCare International Healthcare Booking System. All rights reserved.</div>
+        <div class="footer-author">
+          Engineered by <a href="https://kivice.github.io/" target="_blank">Philip Maina (@Kivice)</a> · Kirinyaga University
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="components.js"></script>
+</body>
 </html>
