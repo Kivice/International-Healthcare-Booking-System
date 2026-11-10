@@ -1,11 +1,11 @@
 /**
  * ApexCare International Healthcare Booking System
- * Interactive Client Engine & Appointment Scheduler
- * Built with vanilla ES6+ for performance and reliability
+ * Modern Client Showcase & Turnkey Web Template Engine
  * Engineered by Philip Maina (@Kivice)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initClientThemeSwitcher();
   initNavigation();
   initQuickBooking();
   initAppointmentEngine();
@@ -15,6 +15,35 @@ document.addEventListener('DOMContentLoaded', () => {
   initTestimonialsEngine();
   highlightActiveNav();
 });
+
+/* ==========================================================================
+   Multi-Theme Switcher (Client Preview Mode)
+   ========================================================================== */
+function initClientThemeSwitcher() {
+  const savedTheme = localStorage.getItem('apex_client_theme') || 'blue';
+  document.documentElement.setAttribute('data-client-theme', savedTheme);
+
+  const swatches = document.querySelectorAll('.theme-swatch');
+  swatches.forEach(swatch => {
+    const theme = swatch.getAttribute('data-theme');
+    if (theme === savedTheme) swatch.classList.add('active');
+
+    swatch.addEventListener('click', () => {
+      swatches.forEach(s => s.classList.remove('active'));
+      swatch.classList.add('active');
+      document.documentElement.setAttribute('data-client-theme', theme);
+      localStorage.setItem('apex_client_theme', theme);
+
+      const themeNames = {
+        blue: 'Clinical Sky (Default)',
+        emerald: 'Medical Emerald',
+        indigo: 'Healthtech Indigo',
+        rose: 'Care Crimson'
+      };
+      showToast(`🎨 Client Theme: ${themeNames[theme] || theme}`);
+    });
+  });
+}
 
 /* ==========================================================================
    Navigation & Mobile Menu
@@ -30,7 +59,6 @@ function initNavigation() {
       toggle.textContent = isOpen ? '✕' : '☰';
     });
 
-    // Close when clicking outside
     document.addEventListener('click', (e) => {
       if (!toggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('open')) {
         navLinks.classList.remove('open');
@@ -85,7 +113,6 @@ function initQuickBooking() {
     const doctor = document.getElementById('quickDoctor')?.value || 'Dr. John Doe';
     const date = document.getElementById('quickDate')?.value || '';
 
-    // Store in sessionStorage to pre-populate appointment.html
     sessionStorage.setItem('apex_prefill_dept', dept);
     sessionStorage.setItem('apex_prefill_doctor', doctor);
     if (date) sessionStorage.setItem('apex_prefill_date', date);
@@ -106,6 +133,9 @@ function initAppointmentEngine() {
   const dateInput = document.getElementById('dateInput');
   const timeInput = document.getElementById('selectedTime');
   const slotButtons = document.querySelectorAll('.slot-btn');
+  const autoFillBtn = document.getElementById('autoFillDemoBtn');
+  const clearFormBtn = document.getElementById('clearDemoBtn');
+  const summaryCard = document.querySelector('.summary-card');
 
   // Summary Elements
   const sumDept = document.getElementById('sumDept');
@@ -161,7 +191,6 @@ function initAppointmentEngine() {
     }
   }
 
-  // Function to update doctor options based on department
   function updateDoctors() {
     if (!deptSelect || !doctorSelect) return;
     const selectedDept = deptSelect.value;
@@ -232,6 +261,57 @@ function initAppointmentEngine() {
   sessionStorage.removeItem('apex_prefill_doctor');
   sessionStorage.removeItem('apex_prefill_date');
 
+  // Client Demo Auto-Fill Trigger
+  if (autoFillBtn) {
+    autoFillBtn.addEventListener('click', () => {
+      if (deptSelect) deptSelect.value = 'cardiology';
+      updateDoctors();
+      if (doctorSelect) doctorSelect.value = 'Dr. Michael Brown';
+
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      const tomorrowStr = tomorrow.toISOString().split('T')[0];
+      if (dateInput) dateInput.value = tomorrowStr;
+
+      slotButtons.forEach(b => {
+        b.classList.remove('selected');
+        if (b.textContent.includes('10:30 AM')) {
+          b.classList.add('selected');
+          if (timeInput) timeInput.value = '10:30 AM';
+          if (sumTime) sumTime.textContent = '10:30 AM';
+        }
+      });
+
+      const nameInput = document.getElementById('patientName');
+      const phoneInput = document.getElementById('patientPhone');
+      const emailInput = document.getElementById('patientEmail');
+      const notesInput = document.getElementById('patientNotes');
+
+      if (nameInput) nameInput.value = 'Sarah Mwangi';
+      if (phoneInput) phoneInput.value = '+254 712 345 678';
+      if (emailInput) emailInput.value = 'sarah.mwangi@example.com';
+      if (notesInput) notesInput.value = 'Annual cardiovascular wellness checkup and ECG diagnostic review.';
+
+      updateSummary();
+
+      if (summaryCard) {
+        summaryCard.classList.add('pulse-highlight');
+        setTimeout(() => summaryCard.classList.remove('pulse-highlight'), 1800);
+      }
+
+      showToast('⚡ Demo patient data populated! Click "Confirm & Generate Voucher" below.');
+    });
+  }
+
+  if (clearFormBtn) {
+    clearFormBtn.addEventListener('click', () => {
+      form.reset();
+      updateDoctors();
+      updateSummary();
+      showToast('Form cleared.');
+    });
+  }
+
   // Handle Form Submission
   form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -243,7 +323,7 @@ function initAppointmentEngine() {
     const doctor = doctorSelect?.value || 'Dr. John Doe';
     const date = dateInput?.value || new Date().toISOString().split('T')[0];
     const time = timeInput?.value || '09:00 AM';
-    const mode = document.querySelector('input[name="consultationMode"]:checked')?.value || 'In-Person Consultation';
+    const mode = document.querySelector('input[name="consultationMode"]:checked')?.value || 'In-Person Hospital Visit';
     const notes = document.getElementById('patientNotes')?.value.trim() || 'No additional notes provided.';
 
     if (!name || !email || !phone) {
@@ -292,8 +372,8 @@ function showConfirmationModal(app) {
       <button class="modal-close" onclick="closeConfirmationModal()">&times;</button>
       <div style="text-align: center; margin-bottom: 1.5rem;">
         <div style="width: 56px; height: 56px; background: #ecfdf5; color: #10b981; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.75rem; margin-bottom: 0.75rem;">✓</div>
-        <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 0.25rem;">Appointment Confirmed!</h3>
-        <p style="font-size: 0.875rem; color: #64748b;">A digital confirmation voucher has been generated.</p>
+        <h3 style="font-size: 1.5rem; font-weight: 800; color: #0f172a; margin-bottom: 0.25rem;">Appointment Voucher Generated!</h3>
+        <p style="font-size: 0.875rem; color: #64748b;">Template Client Demonstration Voucher</p>
       </div>
 
       <div class="ticket-container" style="margin-bottom: 1.5rem;">
@@ -316,6 +396,10 @@ function showConfirmationModal(app) {
             <span style="color: #94a3b8; display: block;">Schedule:</span>
             <strong>${app.date} @ ${app.time}</strong>
           </div>
+        </div>
+        <div style="margin-top: 1rem; padding-top: 0.75rem; border-top: 1px dashed rgba(255, 255, 255, 0.15); font-size: 0.75rem; color: #94a3b8; display: flex; justify-content: space-between;">
+          <span>Mode: ${app.mode}</span>
+          <span style="color: #38bdf8;">Verified Template Demo</span>
         </div>
       </div>
 
@@ -407,7 +491,7 @@ function initContactForm() {
       return;
     }
 
-    showToast(`Thank you, ${name}! Your inquiry has been dispatched to clinical triage.`);
+    showToast(`Inquiry dispatched! In production, this triggers an automated email / webhook to ${email}.`);
     contactForm.reset();
   });
 }
@@ -438,15 +522,14 @@ function initTestimonialsEngine() {
       dept,
       rating: parseInt(rating),
       message,
-      date: 'Just now'
+      date: 'Template Demo Review'
     };
 
-    // Prepend to list in localStorage
     const saved = JSON.parse(localStorage.getItem('apex_user_testimonials') || '[]');
     saved.unshift(newTestimonial);
     localStorage.setItem('apex_user_testimonials', JSON.stringify(saved));
 
-    showToast('Thank you! Your verified review has been submitted.');
+    showToast('Verified review added in client demo session!');
     form.reset();
     renderCustomTestimonials();
   });
@@ -467,7 +550,7 @@ function renderCustomTestimonials() {
       <div class="badge badge-success" style="align-self: flex-start; margin-bottom: 0.85rem;">Verified Patient · ${t.dept || 'Clinical Care'}</div>
       <p class="testimonial-quote">"${t.message}"</p>
       <div class="testimonial-author">
-        <div style="width: 44px; height: 44px; border-radius: 50%; background: #0284c7; color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
+        <div style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem;">
           ${t.name.charAt(0)}
         </div>
         <div>
