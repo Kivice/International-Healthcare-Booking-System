@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ApexCare | Modern Clinical & Healthcare Booking System Template</title>
+  <title>ApexCare | Clinical &amp; Healthcare Booking System Template</title>
   <meta name="description" content="Turnkey healthcare appointment booking and clinical triage portal template. White-label ready for hospitals, private clinics, and telehealth practices.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,25 +13,28 @@
 </head>
 <body>
 
-  <!-- Client Preview Template Bar -->
+  <!-- Client Preview Utility Bar -->
   <div class="client-demo-bar">
     <div class="container client-demo-content">
       <div class="client-demo-badge">
-        <span class="pulse-dot"></span>
+        <span class="pulse-dot" aria-hidden="true"></span>
         <span><strong>Client Showcase Template</strong> · White-Label Ready</span>
       </div>
 
-      <div class="client-theme-switcher">
-        <span style="font-size: 0.75rem; opacity: 0.85;">Theme Preview:</span>
-        <button class="theme-swatch active" data-theme="blue" title="Clinical Sky (Default)" style="background:#0284c7;"></button>
-        <button class="theme-swatch" data-theme="emerald" title="Medical Emerald" style="background:#059669;"></button>
-        <button class="theme-swatch" data-theme="indigo" title="Healthtech Indigo" style="background:#4f46e5;"></button>
-        <button class="theme-swatch" data-theme="rose" title="Care Crimson" style="background:#e11d48;"></button>
+      <div class="client-theme-switcher" role="group" aria-label="Theme color switcher">
+        <span class="theme-label">Theme:</span>
+        <button type="button" class="theme-swatch active" data-theme="blue" title="Clinical Sky (Default)" aria-label="Clinical Sky theme"></button>
+        <button type="button" class="theme-swatch" data-theme="emerald" title="Medical Emerald" aria-label="Medical Emerald theme"></button>
+        <button type="button" class="theme-swatch" data-theme="indigo" title="Healthtech Indigo" aria-label="Healthtech Indigo theme"></button>
+        <button type="button" class="theme-swatch" data-theme="rose" title="Care Crimson" aria-label="Care Crimson theme"></button>
       </div>
 
       <div class="client-demo-actions">
-        <a href="appointment.html" class="client-inquire-pill">⚡ Try Demo Scheduler ➔</a>
-        <a href="#client-inquiry" class="client-inquire-pill" style="color: #38bdf8;">Custom Deployment Inquiries</a>
+        <a href="appointment.html" class="client-inquire-pill">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
+          Scheduler Demo
+        </a>
+        <a href="#client-inquiry" class="client-inquire-pill client-inquire-pill--accent">Custom Deployment</a>
       </div>
     </div>
   </div>
@@ -47,20 +50,22 @@
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link active">Home</a></li>
           <li><a href="services.html" class="nav-link">Clinical Services</a></li>
           <li><a href="meet.html" class="nav-link">Medical Specialists</a></li>
           <li><a href="testimonials.html" class="nav-link">Patient Reviews</a></li>
-          <li><a href="contact.html" class="nav-link">Emergency & Support</a></li>
-          <li><a href="appointment.html" class="nav-link" style="color: var(--primary); font-weight: 700;">Demo Scheduler</a></li>
+          <li><a href="contact.html" class="nav-link">Emergency &amp; Support</a></li>
+          <li class="nav-mobile-cta"><a href="appointment.html" class="btn btn-primary">Book Consultation</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <a href="appointment.html" class="btn btn-primary">Book Consultation</a>
-        <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+        <button type="button" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+        </button>
       </div>
     </div>
   </header>
@@ -71,16 +76,20 @@
       <div class="container hero-grid">
         <div class="hero-content">
           <div class="badge badge-primary hero-pill">
-            <span>✨</span> Turnkey Healthcare Web Template · White-Label Ready
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path><path d="m9 12 2 2 4-4"></path></svg>
+            Turnkey Healthcare Web Template · White-Label Ready
           </div>
           <h1 class="hero-title">
             Modern patient booking &amp; <span class="highlight">clinical triage portal</span>.
           </h1>
           <p class="hero-desc">
-            An engineered digital health template designed for private practices, diagnostic clinics, and hospital networks. Ready for custom branding, EMR/EHR database sync, WhatsApp triage, and commercial client deployment.
+            An engineered digital health template designed for private practices, diagnostic clinics, and hospital networks. Ready for custom branding, EMR/EHR database sync, WhatsApp triage, and commercial deployment.
           </p>
           <div class="hero-cta">
-            <a href="appointment.html" class="btn btn-primary">Launch Interactive Scheduler ➔</a>
+            <a href="appointment.html" class="btn btn-primary">
+              Launch Interactive Scheduler
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
             <a href="#client-specs" class="btn btn-secondary">Client Customization Specs</a>
           </div>
 
@@ -104,7 +113,9 @@
           <div class="hero-card-preview">
             <img src="Healthcare%20Header_Image.webp" alt="Modern Clinical Facility" class="hero-image">
             <div class="hero-floating-card floating-1">
-              <div class="floating-icon">✓</div>
+              <div class="floating-icon">
+                <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg>
+              </div>
               <div>
                 <div class="floating-title">Client-Ready Architecture</div>
                 <div class="floating-sub">Modular Doctors, Services &amp; Schedules</div>
@@ -118,19 +129,20 @@
     <!-- Quick Booking Bar -->
     <div class="container quick-booking-bar">
       <div class="quick-booking-box">
-        <div style="font-size: 0.8125rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.85rem;">
-          ⚡ Interactive Booking Engine Preview
+        <div class="quick-booking-eyebrow">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
+          Interactive Booking Engine Preview
         </div>
         <form id="quickBookingForm" class="quick-booking-form">
           <div class="form-group">
             <label class="form-label" for="quickDept">Department</label>
             <select id="quickDept" class="form-select">
-              <option value="General Consultation">General Medicine</option>
-              <option value="Cardiology">Cardiology & Heart</option>
-              <option value="Pediatrics">Pediatrics & Child Health</option>
-              <option value="Surgery">Orthopedics & Surgery</option>
-              <option value="Diagnostics">Diagnostic Laboratory</option>
-              <option value="Emergency">Emergency Medical Care</option>
+              <option value="general">General Medicine</option>
+              <option value="cardiology">Cardiology &amp; Heart</option>
+              <option value="pediatrics">Pediatrics &amp; Child Health</option>
+              <option value="surgery">Orthopedics &amp; Surgery</option>
+              <option value="diagnostics">Diagnostic Laboratory</option>
+              <option value="emergency">Emergency Medical Care</option>
             </select>
           </div>
 
@@ -150,15 +162,16 @@
           </div>
 
           <div class="form-group">
-            <label class="form-label">Consultation Mode</label>
+            <label class="form-label" for="quickMode">Consultation Mode</label>
             <select class="form-select" id="quickMode">
               <option value="In-Person">In-Person Clinic Visit</option>
               <option value="Telemedicine">Virtual Video Consultation</option>
             </select>
           </div>
 
-          <button type="submit" class="btn btn-primary" style="height: 48px; border-radius: var(--radius-sm);">
-            Test Flow ➔
+          <button type="submit" class="btn btn-primary quick-submit-btn">
+            Test Flow
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </button>
         </form>
       </div>
@@ -167,95 +180,109 @@
     <!-- Client Customization Specs Showcase -->
     <section id="client-specs" class="client-spec-section">
       <div class="container">
-        <div class="section-header" style="color: white; margin-bottom: 3.5rem;">
-          <div class="badge badge-primary" style="background: rgba(var(--primary-rgb), 0.2); color: #38bdf8; margin-bottom: 0.85rem;">
-            Turnkey Deployment Capabilities
-          </div>
-          <h2 class="section-title" style="color: white;">Engineered for Healthcare Clients</h2>
-          <p class="section-desc" style="color: var(--slate-400);">
-            This template is built with clean, zero-bloat web standards so your medical practice or healthtech startup can go live in days, not months.
+        <div class="section-header section-header--dark">
+          <div class="badge badge-accent-dark mb-sm">Turnkey Deployment Capabilities</div>
+          <h2 class="section-title">Engineered for Healthcare Clients</h2>
+          <p class="section-desc">
+            Built with clean, zero-bloat web standards so your medical practice or healthtech team can go live in days, not months.
           </p>
         </div>
 
         <div class="client-spec-grid">
-          <div class="client-spec-card">
-            <div class="client-spec-icon">🎨</div>
+          <article class="client-spec-card">
+            <div class="client-spec-icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+            </div>
             <h3 class="client-spec-title">White-Label Branding</h3>
             <p class="client-spec-desc">
-              Custom color tokens, your medical facility's logo, typography, domain routing, and customized clinic imagery updated seamlessly in under 48 hours.
+              Custom color tokens, your medical facility's logo, typography, domain routing, and customized clinic imagery updated cleanly in under 48 hours.
             </p>
-          </div>
+          </article>
 
-          <div class="client-spec-card">
-            <div class="client-spec-icon">🔌</div>
+          <article class="client-spec-card">
+            <div class="client-spec-icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M3 5v14a9 3 0 0 0 18 0V5"></path><path d="M3 12a9 3 0 0 0 18 0"></path></svg>
+            </div>
             <h3 class="client-spec-title">Database &amp; EMR Connectors</h3>
             <p class="client-spec-desc">
               Ready integration hooks for PostgreSQL, Supabase, Firebase, or existing hospital EHR endpoints (FHIR/HL7) to sync doctor availability and patient charts.
             </p>
-          </div>
+          </article>
 
-          <div class="client-spec-card">
-            <div class="client-spec-icon">💬</div>
+          <article class="client-spec-card">
+            <div class="client-spec-icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+            </div>
             <h3 class="client-spec-title">WhatsApp &amp; SMS Triage</h3>
             <p class="client-spec-desc">
               Direct connection to WhatsApp Business API and Twilio SMS gateways for automated appointment confirmations, reminders, and triage escalations.
             </p>
-          </div>
+          </article>
 
-          <div class="client-spec-card">
-            <div class="client-spec-icon">🛡️</div>
+          <article class="client-spec-card">
+            <div class="client-spec-icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path><path d="m9 12 2 2 4-4"></path></svg>
+            </div>
             <h3 class="client-spec-title">Privacy &amp; Telehealth Ready</h3>
             <p class="client-spec-desc">
               GDPR/HIPAA-conscious data flow with zero external tracking scripts, sub-second load times, and plug-in compatibility with Daily.co or Twilio Video.
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Core Pillars / Why Choose Us -->
+    <!-- Core Pillars -->
     <section class="section section-alt">
       <div class="container">
         <div class="section-header">
           <div class="badge badge-primary section-pill">Patient Experience</div>
           <h2 class="section-title">Designed for Patient Safety &amp; Seamless Scheduling</h2>
           <p class="section-desc">
-            We eliminate the friction of seeking verified medical care abroad or locally. Our streamlined system guarantees swift scheduling, transparent pricing, and trusted practitioners.
+            We eliminate the friction of seeking verified medical care abroad or locally. Streamlined scheduling, transparent fees, and trusted practitioners.
           </p>
         </div>
 
         <div class="pillars-grid">
-          <div class="pillar-card">
-            <div class="pillar-icon">👨‍⚕️</div>
+          <article class="pillar-card">
+            <div class="pillar-icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><polyline points="16 11 18 13 22 9"></polyline></svg>
+            </div>
             <h3 class="pillar-title">Verified Specialists</h3>
             <p class="pillar-text">
-              Every healthcare provider undergoes rigorous clinical credentialing, malpractice review, and institutional verification before listing.
+              Every healthcare provider undergoes clinical credentialing, malpractice review, and institutional verification before listing.
             </p>
-          </div>
+          </article>
 
-          <div class="pillar-card">
-            <div class="pillar-icon">🔬</div>
+          <article class="pillar-card">
+            <div class="pillar-icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6"></path><path d="M10 3v6l-4 9a2 2 0 0 0 1.8 3h8.4a2 2 0 0 0 1.8-3l-4-9V3"></path><path d="M8 14h8"></path></svg>
+            </div>
             <h3 class="pillar-title">Modern Diagnostic Labs</h3>
             <p class="pillar-text">
               Direct linkage to high-precision pathology, radiology, and biochemistry units with digital result delivery to your patient portal.
             </p>
-          </div>
+          </article>
 
-          <div class="pillar-card">
-            <div class="pillar-icon">💳</div>
+          <article class="pillar-card">
+            <div class="pillar-icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><line x1="2" y1="10" x2="22" y2="10"></line></svg>
+            </div>
             <h3 class="pillar-title">Transparent Healthcare</h3>
             <p class="pillar-text">
-              Clear itemized consultation fees, no surprise facility charges, and upfront insurance coverage verification before your appointment.
+              Clear itemized consultation fees, zero surprise facility charges, and upfront insurance coverage verification before your appointment.
             </p>
-          </div>
+          </article>
 
-          <div class="pillar-card">
-            <div class="pillar-icon">⚡</div>
+          <article class="pillar-card">
+            <div class="pillar-icon">
+              <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            </div>
             <h3 class="pillar-title">24/7 Emergency Triage</h3>
             <p class="pillar-text">
               Immediate triage routing, emergency dispatch assistance, and international telemedicine links via direct WhatsApp hotline.
             </p>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -272,11 +299,11 @@
         </div>
 
         <div class="doctors-grid">
-          <div class="doctor-card">
+          <article class="doctor-card">
             <div class="doctor-photo-wrap">
               <img src="John%20Doe.jpg" alt="Dr. John Doe" class="doctor-photo">
               <div class="doctor-status">
-                <span class="status-indicator"></span> Available Today
+                <span class="status-indicator" aria-hidden="true"></span> Available Today
               </div>
             </div>
             <div class="doctor-body">
@@ -286,17 +313,20 @@
                 18+ years of clinical leadership specializing in adult medicine, preventative diagnostics, and acute treatment regimens.
               </p>
               <div class="doctor-footer">
-                <div class="doctor-rating">★ 4.95 (142 reviews)</div>
-                <a href="appointment.html" class="btn btn-outline" style="padding: 0.4rem 0.9rem; font-size: 0.8125rem;">Book Slot</a>
+                <div class="doctor-rating">
+                  <svg class="icon icon-sm doctor-rating-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  4.95 (142 reviews)
+                </div>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. John Doe'); sessionStorage.setItem('apex_prefill_dept', 'general');" class="btn btn-outline btn-sm">Book Slot</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="doctor-card">
+          <article class="doctor-card">
             <div class="doctor-photo-wrap">
               <img src="Jane%20Smith.jpg" alt="Dr. Jane Smith" class="doctor-photo">
               <div class="doctor-status">
-                <span class="status-indicator"></span> Available Tomorrow
+                <span class="status-indicator" aria-hidden="true"></span> Available Tomorrow
               </div>
             </div>
             <div class="doctor-body">
@@ -306,17 +336,20 @@
                 Expertise in reconstructive orthopedic surgery, joint restoration, sports trauma, and minimally invasive surgical solutions.
               </p>
               <div class="doctor-footer">
-                <div class="doctor-rating">★ 4.98 (210 reviews)</div>
-                <a href="appointment.html" class="btn btn-outline" style="padding: 0.4rem 0.9rem; font-size: 0.8125rem;">Book Slot</a>
+                <div class="doctor-rating">
+                  <svg class="icon icon-sm doctor-rating-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  4.98 (210 reviews)
+                </div>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. Jane Smith'); sessionStorage.setItem('apex_prefill_dept', 'surgery');" class="btn btn-outline btn-sm">Book Slot</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="doctor-card">
+          <article class="doctor-card">
             <div class="doctor-photo-wrap">
               <img src="Emily%20Johnson.jpg" alt="Dr. Emily Johnson" class="doctor-photo">
               <div class="doctor-status">
-                <span class="status-indicator"></span> Available Today
+                <span class="status-indicator" aria-hidden="true"></span> Available Today
               </div>
             </div>
             <div class="doctor-body">
@@ -326,17 +359,20 @@
                 Compassionate pediatric care focusing on neonatal development, early childhood immunological health, and family wellness.
               </p>
               <div class="doctor-footer">
-                <div class="doctor-rating">★ 4.92 (185 reviews)</div>
-                <a href="appointment.html" class="btn btn-outline" style="padding: 0.4rem 0.9rem; font-size: 0.8125rem;">Book Slot</a>
+                <div class="doctor-rating">
+                  <svg class="icon icon-sm doctor-rating-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  4.92 (185 reviews)
+                </div>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. Emily Johnson'); sessionStorage.setItem('apex_prefill_dept', 'pediatrics');" class="btn btn-outline btn-sm">Book Slot</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="doctor-card">
+          <article class="doctor-card">
             <div class="doctor-photo-wrap">
               <img src="Michael%20Brown.jpg" alt="Dr. Michael Brown" class="doctor-photo">
               <div class="doctor-status">
-                <span class="status-indicator"></span> Next Slot: Thursday
+                <span class="status-indicator" aria-hidden="true"></span> Next Slot: Thursday
               </div>
             </div>
             <div class="doctor-body">
@@ -346,15 +382,21 @@
                 Pioneering non-invasive cardiac imaging, hypertension management, and coronary therapeutic care with over 15 years in practice.
               </p>
               <div class="doctor-footer">
-                <div class="doctor-rating">★ 4.97 (164 reviews)</div>
-                <a href="appointment.html" class="btn btn-outline" style="padding: 0.4rem 0.9rem; font-size: 0.8125rem;">Book Slot</a>
+                <div class="doctor-rating">
+                  <svg class="icon icon-sm doctor-rating-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                  4.97 (164 reviews)
+                </div>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. Michael Brown'); sessionStorage.setItem('apex_prefill_dept', 'cardiology');" class="btn btn-outline btn-sm">Book Slot</a>
               </div>
             </div>
-          </div>
+          </article>
         </div>
 
-        <div style="text-align: center; margin-top: 2.5rem;">
-          <a href="meet.html" class="btn btn-secondary">View Full Medical Staff Template ➔</a>
+        <div class="section-cta-center">
+          <a href="meet.html" class="btn btn-secondary">
+            View Full Medical Staff Template
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -371,7 +413,7 @@
         </div>
 
         <div class="services-grid">
-          <div class="service-card">
+          <article class="service-card">
             <div class="service-image-wrap">
               <img src="General-Consultation.jpg" alt="General Medical Consultation" class="service-image">
               <span class="service-tag">Primary Care</span>
@@ -383,15 +425,15 @@
               </p>
               <div class="service-meta">
                 <div class="service-price">From <strong>$120</strong> / session</div>
-                <a href="appointment.html" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Book</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'general');" class="btn btn-primary btn-sm">Book</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="service-card">
+          <article class="service-card">
             <div class="service-image-wrap">
               <img src="Emergency-Medical-Care.webp" alt="Emergency Medical Care" class="service-image">
-              <span class="service-tag" style="color: var(--rose-500);">24/7 Emergency</span>
+              <span class="service-tag service-tag--urgent">24/7 Emergency</span>
             </div>
             <div class="service-body">
               <h3 class="service-title">Emergency &amp; Acute Triage</h3>
@@ -399,13 +441,13 @@
                 Immediate clinical triage, urgent trauma stabilization, international patient repatriation, and critical hospital dispatch.
               </p>
               <div class="service-meta">
-                <div class="service-price">Emergency Priority</div>
-                <a href="contact.html" class="btn btn-emergency" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Triage Desk</a>
+                <div class="service-price service-price--urgent">Emergency Priority</div>
+                <a href="contact.html" class="btn btn-emergency btn-sm">Triage Desk</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="service-card">
+          <article class="service-card">
             <div class="service-image-wrap">
               <img src="diagnostic_lab.png" alt="Diagnostic Laboratories" class="service-image">
               <span class="service-tag">Laboratory</span>
@@ -417,14 +459,17 @@
               </p>
               <div class="service-meta">
                 <div class="service-price">From <strong>$95</strong> / panel</div>
-                <a href="appointment.html" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Book</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'diagnostics');" class="btn btn-primary btn-sm">Book</a>
               </div>
             </div>
-          </div>
+          </article>
         </div>
 
-        <div style="text-align: center; margin-top: 2.5rem;">
-          <a href="services.html" class="btn btn-secondary">Explore All 6 Clinical Departments ➔</a>
+        <div class="section-cta-center">
+          <a href="services.html" class="btn btn-secondary">
+            Explore All 6 Clinical Departments
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -436,13 +481,22 @@
           <div class="badge badge-success section-pill">Social Proof</div>
           <h2 class="section-title">Verified Patient Reviews Template</h2>
           <p class="section-desc">
-            Social proof module featuring authenticated client reviews, star ratings, and interactive submission capabilities.
+            Social proof module featuring authenticated patient feedback, clinical verification tags, and interactive submission capabilities.
           </p>
         </div>
 
         <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
+          <article class="testimonial-card">
+            <div class="testimonial-top-row">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <span class="testimonial-dept-tag">Orthopedics</span>
+            </div>
             <p class="testimonial-quote">
               "The doctors were incredibly attentive and professional. I felt cared for every step of the way during my international consultation."
             </p>
@@ -453,12 +507,21 @@
                 <div class="author-location">South Africa · Orthopedics Patient</div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
+          <article class="testimonial-card">
+            <div class="testimonial-top-row">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <span class="testimonial-dept-tag">Family Care</span>
+            </div>
             <p class="testimonial-quote">
-              "The booking process was seamless, and the medical staff was extraordinarily friendly. I highly recommend ApexCare's digital portal!"
+              "The booking process was seamless, and the medical staff was extraordinarily friendly. I highly recommend ApexCare's digital portal."
             </p>
             <div class="testimonial-author">
               <img src="Wanjiru.jpg" alt="Wanjiru Mohamed" class="author-avatar">
@@ -467,10 +530,19 @@
                 <div class="author-location">Kenya · General Consultation</div>
               </div>
             </div>
-          </div>
+          </article>
 
-          <div class="testimonial-card">
-            <div class="testimonial-stars">★★★★★</div>
+          <article class="testimonial-card">
+            <div class="testimonial-top-row">
+              <div class="testimonial-stars" aria-label="5 out of 5 stars">
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                <svg class="icon star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </div>
+              <span class="testimonial-dept-tag">Diagnostics</span>
+            </div>
             <p class="testimonial-quote">
               "I was deeply impressed by the diagnostic laboratory facilities and the swift turnaround of my pathology assessments."
             </p>
@@ -481,31 +553,36 @@
                 <div class="author-location">China · Diagnostic Screening</div>
               </div>
             </div>
-          </div>
+          </article>
         </div>
 
-        <div style="text-align: center; margin-top: 2.5rem;">
-          <a href="testimonials.html" class="btn btn-secondary">Read More Reviews &amp; Test Submission ➔</a>
+        <div class="section-cta-center">
+          <a href="testimonials.html" class="btn btn-secondary">
+            Read More Reviews &amp; Test Submission
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <!-- Deploy for Your Practice / Client Inquiries Section -->
+    <!-- Client Inquiries Section -->
     <section id="client-inquiry" class="section section-alt">
       <div class="container">
-        <div class="emergency-banner" style="background: linear-gradient(135deg, #0b1329 0%, #172554 100%); border-color: rgba(56, 189, 248, 0.3); color: white;">
-          <div class="emergency-info">
-            <h3 style="color: white; font-size: 1.6rem;">Deploy This Clinical Portal for Your Hospital or Practice</h3>
-            <p style="color: #93c5fd; max-width: 650px;">
-              Looking to implement this patient scheduling portal for your medical clinic, specialist group, or telehealth venture? Philip Maina offers turnkey deployment, customized styling, database setup, and maintenance.
+        <div class="cta-dark-banner">
+          <div>
+            <h3 class="cta-dark-banner__title">Deploy This Clinical Portal for Your Hospital or Practice</h3>
+            <p class="cta-dark-banner__desc">
+              Looking to implement this patient scheduling portal for your clinic, specialist group, or telehealth venture? Philip Maina offers turnkey deployment, customized styling, database setup, and maintenance.
             </p>
           </div>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="https://wa.me/254708746611?text=Hi%20Philip,%20I%20saw%20your%20ApexCare%20Healthcare%20Portal%20template%20and%20would%20like%20to%20discuss%20deploying%20it%20for%20my%20practice." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #0284c7;">
-              💬 Inquire via WhatsApp (+254 708 746 611)
+          <div class="cta-dark-banner__actions">
+            <a href="https://wa.me/254708746611?text=Hi%20Philip,%20I%20saw%20your%20ApexCare%20Healthcare%20Portal%20template%20and%20would%20like%20to%20discuss%20deploying%20it%20for%20my%20practice." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              WhatsApp (+254 708 746 611)
             </a>
             <a href="mailto:philipmaina637@gmail.com?subject=Healthcare%20Portal%20Deployment%20Inquiry" class="btn btn-secondary">
-              ✉️ Email Developer
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              Email Developer
             </a>
           </div>
         </div>
@@ -513,7 +590,7 @@
     </section>
   </main>
 
-  <!-- Modern Clinical Footer -->
+  <!-- Clinical Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -528,7 +605,7 @@
           <p class="footer-desc">
             A turnkey, patient-centric digital clinical booking system template facilitating seamless appointments, board-certified physician consultations, and international emergency triage.
           </p>
-          <div style="font-size: 0.8125rem; color: var(--slate-400);">
+          <div class="footer-contact">
             <strong>Client Consultation:</strong> +254 708 746 611<br>
             <strong>Engineering:</strong> philipmaina637@gmail.com
           </div>
@@ -558,10 +635,10 @@
 
         <div>
           <div class="footer-col-title">Client Specifications</div>
-          <p style="font-size: 0.8125rem; line-height: 1.6; color: var(--slate-400); margin-bottom: 1rem;">
+          <p class="footer-spec-text">
             Turnkey commercial web template. White-label ready, zero heavy framework overhead, sub-second load times.
           </p>
-          <div class="badge badge-neutral" style="background: rgba(255, 255, 255, 0.08); color: #94a3b8;">
+          <div class="badge badge-neutral badge-compliance">
             ISO 27001 &amp; HIPAA Aligned
           </div>
         </div>
@@ -570,7 +647,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 ApexCare International Healthcare Booking System. Client Preview Template.</div>
         <div class="footer-author">
-          Engineered by <a href="https://kivice.github.io/" target="_blank">Philip Maina (@Kivice)</a> · Kirinyaga University
+          Engineered by <a href="https://kivice.github.io/" target="_blank" rel="noopener noreferrer">Philip Maina (@Kivice)</a> · Kirinyaga University
         </div>
       </div>
     </div>

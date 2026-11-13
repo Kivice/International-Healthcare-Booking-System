@@ -13,25 +13,28 @@
 </head>
 <body>
 
-  <!-- Client Preview Template Bar -->
+  <!-- Client Preview Utility Bar -->
   <div class="client-demo-bar">
     <div class="container client-demo-content">
       <div class="client-demo-badge">
-        <span class="pulse-dot"></span>
+        <span class="pulse-dot" aria-hidden="true"></span>
         <span><strong>Client Showcase Template</strong> · Triage &amp; Inquiry Hub</span>
       </div>
 
-      <div class="client-theme-switcher">
-        <span style="font-size: 0.75rem; opacity: 0.85;">Theme Preview:</span>
-        <button class="theme-swatch active" data-theme="blue" title="Clinical Sky (Default)" style="background:#0284c7;"></button>
-        <button class="theme-swatch" data-theme="emerald" title="Medical Emerald" style="background:#059669;"></button>
-        <button class="theme-swatch" data-theme="indigo" title="Healthtech Indigo" style="background:#4f46e5;"></button>
-        <button class="theme-swatch" data-theme="rose" title="Care Crimson" style="background:#e11d48;"></button>
+      <div class="client-theme-switcher" role="group" aria-label="Theme color switcher">
+        <span class="theme-label">Theme:</span>
+        <button type="button" class="theme-swatch active" data-theme="blue" title="Clinical Sky (Default)" aria-label="Clinical Sky theme"></button>
+        <button type="button" class="theme-swatch" data-theme="emerald" title="Medical Emerald" aria-label="Medical Emerald theme"></button>
+        <button type="button" class="theme-swatch" data-theme="indigo" title="Healthtech Indigo" aria-label="Healthtech Indigo theme"></button>
+        <button type="button" class="theme-swatch" data-theme="rose" title="Care Crimson" aria-label="Care Crimson theme"></button>
       </div>
 
       <div class="client-demo-actions">
-        <a href="appointment.html" class="client-inquire-pill">⚡ Try Demo Scheduler ➔</a>
-        <a href="#client-inquiry" class="client-inquire-pill" style="color: #38bdf8;">Custom Deployment Inquiries</a>
+        <a href="appointment.html" class="client-inquire-pill">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
+          Scheduler Demo
+        </a>
+        <a href="#client-inquiry" class="client-inquire-pill client-inquire-pill--accent">Custom Deployment</a>
       </div>
     </div>
   </div>
@@ -47,50 +50,59 @@
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="services.html" class="nav-link">Clinical Services</a></li>
           <li><a href="meet.html" class="nav-link">Medical Specialists</a></li>
           <li><a href="testimonials.html" class="nav-link">Patient Reviews</a></li>
           <li><a href="contact.html" class="nav-link active">Emergency &amp; Support</a></li>
-          <li><a href="appointment.html" class="nav-link" style="color: var(--primary); font-weight: 700;">Demo Scheduler</a></li>
+          <li class="nav-mobile-cta"><a href="appointment.html" class="btn btn-primary">Book Consultation</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <a href="appointment.html" class="btn btn-primary">Book Consultation</a>
-        <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+        <button type="button" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+        </button>
       </div>
     </div>
   </header>
 
   <main>
     <!-- Page Header -->
-    <section style="background: linear-gradient(135deg, #fff1f2 0%, #ffe4e6 50%, #f0f9ff 100%); padding: 3.5rem 0; border-bottom: 1px solid #fecdd3;">
+    <section class="page-header page-header--triage">
       <div class="container">
-        <div class="badge badge-primary" style="background: #ffe4e6; color: #e11d48; margin-bottom: 0.75rem;">Interactive Triage &amp; Inquiry Hub</div>
-        <h1 style="font-size: 2.25rem; font-weight: 800; color: #881337; margin-bottom: 0.5rem;">Emergency Triage &amp; Patient Support</h1>
-        <p style="color: #9f1239; max-width: 680px;">
+        <div class="badge badge-urgent mb-sm">Interactive Triage &amp; Inquiry Hub</div>
+        <h1 class="page-header__title">Emergency Triage &amp; Patient Support</h1>
+        <p class="page-header__desc">
           Demonstration portal illustrating 24/7 urgent triage escalation, instant WhatsApp connection, and patient support ticketing.
         </p>
       </div>
     </section>
 
-    <!-- Emergency Triage Banner -->
-    <section class="section" style="padding-top: 3.5rem;">
+    <!-- Emergency Triage Banner & Channels -->
+    <section class="section section-compact-top">
       <div class="container">
-        <div class="emergency-banner" style="margin-bottom: 3.5rem;">
+        <div class="emergency-banner">
           <div class="emergency-info">
-            <h3 style="font-size: 1.5rem;">🚨 Are You Experiencing a Life-Threatening Medical Emergency?</h3>
-            <p>If you or someone around you is experiencing severe trauma, acute chest pain, uncontrolled bleeding, or loss of consciousness, do not wait for email responses. Contact our rapid triage dispatch immediately.</p>
+            <h3>
+              <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+              Experiencing a Life-Threatening Medical Emergency?
+            </h3>
+            <p>
+              If you or someone around you is experiencing severe trauma, acute chest pain, uncontrolled bleeding, or loss of consciousness, do not wait for email responses. Contact rapid triage dispatch immediately.
+            </p>
           </div>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="https://wa.me/254708746611?text=Hi%20Philip,%20I%20am%20testing%20the%20Emergency%20Triage%20hotline%20button." target="_blank" rel="noopener noreferrer" class="btn btn-emergency" style="font-size: 1.05rem; padding: 0.85rem 1.75rem;">
-              💬 Instant WhatsApp Triage (+254 708 746 611)
+          <div class="emergency-actions">
+            <a href="https://wa.me/254708746611?text=Hi%20Philip,%20I%20am%20testing%20the%20Emergency%20Triage%20hotline%20button." target="_blank" rel="noopener noreferrer" class="btn btn-emergency btn-lg">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              WhatsApp Triage (+254 708 746 611)
             </a>
-            <a href="tel:+254708746611" class="btn btn-secondary" style="font-size: 1.05rem; padding: 0.85rem 1.75rem;">
-              📞 Direct Call
+            <a href="tel:+254708746611" class="btn btn-secondary btn-lg">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              Direct Call
             </a>
           </div>
         </div>
@@ -99,11 +111,11 @@
 
           <!-- Left: Direct Inquiry Form -->
           <div class="contact-card">
-            <h2 style="font-size: 1.5rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.5rem;">Send a Clinical Inquiry</h2>
-            <p style="font-size: 0.9375rem; color: var(--slate-600); margin-bottom: 2rem;">Demo form for testing how non-urgent inquiries and lab result requests are processed:</p>
+            <h2 class="contact-card__title">Send a Clinical Inquiry</h2>
+            <p class="contact-card__desc">Demo form illustrating how non-urgent patient inquiries and lab result requests are routed:</p>
 
             <form id="directContactForm">
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem;">
+              <div class="form-grid-2 mb-md">
                 <div class="form-group">
                   <label class="form-label" for="cName">Your Name *</label>
                   <input type="text" id="cName" class="form-input" placeholder="e.g. Sarah Mwangi" required>
@@ -114,7 +126,7 @@
                 </div>
               </div>
 
-              <div class="form-group" style="margin-bottom: 1.25rem;">
+              <div class="form-group mb-md">
                 <label class="form-label" for="cSubject">Inquiry Topic *</label>
                 <select id="cSubject" class="form-select" required>
                   <option value="Appointment Rescheduling">Appointment Rescheduling / Inquiries</option>
@@ -125,84 +137,94 @@
                 </select>
               </div>
 
-              <div class="form-group" style="margin-bottom: 1.75rem;">
+              <div class="form-group mb-lg">
                 <label class="form-label" for="cMessage">Message Details *</label>
                 <textarea id="cMessage" class="form-textarea" rows="4" placeholder="How can our clinical coordination team assist you?" required></textarea>
               </div>
 
-              <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.85rem; font-size: 1rem;">
-                Dispatch Demo Inquiry ➔
+              <button type="submit" class="btn btn-primary btn-block">
+                Dispatch Demo Inquiry
+                <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
               </button>
             </form>
           </div>
 
-          <!-- Right: Contact Methods & Locations -->
+          <!-- Right: Contact Methods & Operating Hours -->
           <div>
             <div class="contact-card">
-              <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.5rem;">Sample Clinic Channels</h3>
-              <p style="font-size: 0.875rem; color: var(--slate-600);">Customizable for your hospital's direct hotlines.</p>
+              <h3 class="contact-card__title">Sample Clinic Channels</h3>
+              <p class="contact-card__desc">Configurable endpoints ready to connect to your hospital's direct hotlines.</p>
 
               <div class="contact-methods">
                 <div class="contact-item">
-                  <div class="contact-icon">📞</div>
+                  <div class="contact-icon">
+                    <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </div>
                   <div>
                     <div class="contact-label">24/7 Emergency Line</div>
                     <div class="contact-val">+254 708 746 611</div>
-                    <div style="font-size: 0.775rem; color: var(--slate-500); margin-top: 0.2rem;">Immediate paramedic &amp; triage dispatch</div>
+                    <div class="contact-subtext">Immediate paramedic &amp; triage dispatch</div>
                   </div>
                 </div>
 
                 <div class="contact-item">
-                  <div class="contact-icon">💬</div>
+                  <div class="contact-icon">
+                    <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                  </div>
                   <div>
                     <div class="contact-label">WhatsApp Live Desk</div>
                     <div class="contact-val">
-                      <a href="https://wa.me/254708746611" target="_blank" rel="noopener noreferrer" style="color: var(--primary);">
-                        +254 708 746 611 ↗
+                      <a href="https://wa.me/254708746611" target="_blank" rel="noopener noreferrer" class="contact-val-link">
+                        +254 708 746 611
+                        <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"></path><path d="M7 7h10v10"></path></svg>
                       </a>
                     </div>
-                    <div style="font-size: 0.775rem; color: var(--slate-500); margin-top: 0.2rem;">Instant messaging &amp; appointment help</div>
+                    <div class="contact-subtext">Instant messaging &amp; appointment help</div>
                   </div>
                 </div>
 
                 <div class="contact-item">
-                  <div class="contact-icon">✉️</div>
+                  <div class="contact-icon">
+                    <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  </div>
                   <div>
                     <div class="contact-label">Official Clinical Email</div>
                     <div class="contact-val">philipmaina637@gmail.com</div>
-                    <div style="font-size: 0.775rem; color: var(--slate-500); margin-top: 0.2rem;">Medical records &amp; formal correspondence</div>
+                    <div class="contact-subtext">Medical records &amp; formal correspondence</div>
                   </div>
                 </div>
 
                 <div class="contact-item">
-                  <div class="contact-icon">📍</div>
+                  <div class="contact-icon">
+                    <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </div>
                   <div>
                     <div class="contact-label">Regional Medical Hub</div>
                     <div class="contact-val">ApexCare Medical Complex</div>
-                    <div style="font-size: 0.775rem; color: var(--slate-500); margin-top: 0.2rem;">Hospital Road, Upper Hill, Nairobi, Kenya</div>
+                    <div class="contact-subtext">Hospital Road, Upper Hill, Nairobi, Kenya</div>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Operating Hours Card -->
-            <div class="contact-card" style="margin-top: 1.5rem; padding: 1.75rem;">
-              <h4 style="font-weight: 800; font-size: 1.1rem; color: var(--navy-950); margin-bottom: 0.75rem;">Operating Hours</h4>
-              <div style="font-size: 0.875rem; color: var(--slate-600); display: flex; flex-direction: column; gap: 0.5rem;">
-                <div style="display: flex; justify-content: space-between;">
-                  <span>Emergency &amp; Triage:</span>
-                  <strong style="color: var(--emerald-500);">24/7 Open</strong>
+            <div class="contact-card contact-hours-card">
+              <h4 class="hours-title">Operating Hours</h4>
+              <div class="hours-list">
+                <div class="hours-row">
+                  <span>Emergency &amp; Triage</span>
+                  <strong class="hours-status-open">24/7 Open</strong>
                 </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span>Outpatient Consultations:</span>
+                <div class="hours-row">
+                  <span>Outpatient Consultations</span>
                   <strong>Mon - Sat: 08:00 - 18:00</strong>
                 </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span>Diagnostic Laboratories:</span>
+                <div class="hours-row">
+                  <span>Diagnostic Laboratories</span>
                   <strong>24 Hours Continuous</strong>
                 </div>
-                <div style="display: flex; justify-content: space-between;">
-                  <span>Telemedicine Desks:</span>
+                <div class="hours-row">
+                  <span>Telemedicine Desks</span>
                   <strong>06:00 - 22:00 EAT</strong>
                 </div>
               </div>
@@ -216,19 +238,21 @@
     <!-- Client Deployment Section -->
     <section id="client-inquiry" class="section section-alt">
       <div class="container">
-        <div class="emergency-banner" style="background: linear-gradient(135deg, #0b1329 0%, #172554 100%); border-color: rgba(56, 189, 248, 0.3); color: white;">
-          <div class="emergency-info">
-            <h3 style="color: white; font-size: 1.6rem;">Deploy This Clinical Portal for Your Hospital or Practice</h3>
-            <p style="color: #93c5fd; max-width: 650px;">
-              Looking to implement this patient scheduling portal for your medical clinic, specialist group, or telehealth venture? Philip Maina offers turnkey deployment, customized styling, database setup, and maintenance.
+        <div class="cta-dark-banner">
+          <div>
+            <h3 class="cta-dark-banner__title">Deploy This Clinical Portal for Your Hospital or Practice</h3>
+            <p class="cta-dark-banner__desc">
+              Looking to implement this patient scheduling portal for your clinic, specialist group, or telehealth venture? Philip Maina offers turnkey deployment, customized styling, database setup, and maintenance.
             </p>
           </div>
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="https://wa.me/254708746611?text=Hi%20Philip,%20I%20saw%20your%20ApexCare%20Healthcare%20Portal%20template%20and%20would%20like%20to%20discuss%20deploying%20it%20for%20my%20practice." target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="background: #0284c7;">
-              💬 Inquire via WhatsApp (+254 708 746 611)
+          <div class="cta-dark-banner__actions">
+            <a href="https://wa.me/254708746611?text=Hi%20Philip,%20I%20saw%20your%20ApexCare%20Healthcare%20Portal%20template%20and%20would%20like%20to%20discuss%20deploying%20it%20for%20my%20practice." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+              WhatsApp (+254 708 746 611)
             </a>
             <a href="mailto:philipmaina637@gmail.com?subject=Healthcare%20Portal%20Deployment%20Inquiry" class="btn btn-secondary">
-              ✉️ Email Developer
+              <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              Email Developer
             </a>
           </div>
         </div>
@@ -236,7 +260,7 @@
     </section>
   </main>
 
-  <!-- Modern Clinical Footer -->
+  <!-- Clinical Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -251,7 +275,7 @@
           <p class="footer-desc">
             A turnkey, patient-centric digital clinical booking system template facilitating seamless appointments, board-certified physician consultations, and international emergency triage.
           </p>
-          <div style="font-size: 0.8125rem; color: var(--slate-400);">
+          <div class="footer-contact">
             <strong>Client Consultation:</strong> +254 708 746 611<br>
             <strong>Engineering:</strong> philipmaina637@gmail.com
           </div>
@@ -281,10 +305,10 @@
 
         <div>
           <div class="footer-col-title">Client Specifications</div>
-          <p style="font-size: 0.8125rem; line-height: 1.6; color: var(--slate-400); margin-bottom: 1rem;">
+          <p class="footer-spec-text">
             Turnkey commercial web template. White-label ready, zero heavy framework overhead, sub-second load times.
           </p>
-          <div class="badge badge-neutral" style="background: rgba(255, 255, 255, 0.08); color: #94a3b8;">
+          <div class="badge badge-neutral badge-compliance">
             ISO 27001 &amp; HIPAA Aligned
           </div>
         </div>
@@ -293,7 +317,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 ApexCare International Healthcare Booking System. Client Preview Template.</div>
         <div class="footer-author">
-          Engineered by <a href="https://kivice.github.io/" target="_blank">Philip Maina (@Kivice)</a> · Kirinyaga University
+          Engineered by <a href="https://kivice.github.io/" target="_blank" rel="noopener noreferrer">Philip Maina (@Kivice)</a> · Kirinyaga University
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Medical Team Directory Template | ApexCare International Healthcare</title>
-  <meta name="description" content="Medical practitioners and specialists directory template. Board-certified physicians, credentials, and 1-click consultation scheduling.">
+  <meta name="description" content="Medical practitioners and specialists directory template. Board-certified physicians, credentials, and one-click consultation scheduling.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -13,25 +13,28 @@
 </head>
 <body>
 
-  <!-- Client Preview Template Bar -->
+  <!-- Client Preview Utility Bar -->
   <div class="client-demo-bar">
     <div class="container client-demo-content">
       <div class="client-demo-badge">
-        <span class="pulse-dot"></span>
+        <span class="pulse-dot" aria-hidden="true"></span>
         <span><strong>Client Showcase Template</strong> · Doctor Directory Architecture</span>
       </div>
 
-      <div class="client-theme-switcher">
-        <span style="font-size: 0.75rem; opacity: 0.85;">Theme Preview:</span>
-        <button class="theme-swatch active" data-theme="blue" title="Clinical Sky (Default)" style="background:#0284c7;"></button>
-        <button class="theme-swatch" data-theme="emerald" title="Medical Emerald" style="background:#059669;"></button>
-        <button class="theme-swatch" data-theme="indigo" title="Healthtech Indigo" style="background:#4f46e5;"></button>
-        <button class="theme-swatch" data-theme="rose" title="Care Crimson" style="background:#e11d48;"></button>
+      <div class="client-theme-switcher" role="group" aria-label="Theme color switcher">
+        <span class="theme-label">Theme:</span>
+        <button type="button" class="theme-swatch active" data-theme="blue" title="Clinical Sky (Default)" aria-label="Clinical Sky theme"></button>
+        <button type="button" class="theme-swatch" data-theme="emerald" title="Medical Emerald" aria-label="Medical Emerald theme"></button>
+        <button type="button" class="theme-swatch" data-theme="indigo" title="Healthtech Indigo" aria-label="Healthtech Indigo theme"></button>
+        <button type="button" class="theme-swatch" data-theme="rose" title="Care Crimson" aria-label="Care Crimson theme"></button>
       </div>
 
       <div class="client-demo-actions">
-        <a href="appointment.html" class="client-inquire-pill">⚡ Try Demo Scheduler ➔</a>
-        <a href="contact.html" class="client-inquire-pill" style="color: #38bdf8;">Custom Deployment Inquiries</a>
+        <a href="appointment.html" class="client-inquire-pill">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
+          Scheduler Demo
+        </a>
+        <a href="contact.html" class="client-inquire-pill client-inquire-pill--accent">Custom Deployment</a>
       </div>
     </div>
   </div>
@@ -47,37 +50,39 @@
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="services.html" class="nav-link">Clinical Services</a></li>
           <li><a href="meet.html" class="nav-link active">Medical Specialists</a></li>
           <li><a href="testimonials.html" class="nav-link">Patient Reviews</a></li>
-          <li><a href="contact.html" class="nav-link">Emergency & Support</a></li>
-          <li><a href="appointment.html" class="nav-link" style="color: var(--primary); font-weight: 700;">Demo Scheduler</a></li>
+          <li><a href="contact.html" class="nav-link">Emergency &amp; Support</a></li>
+          <li class="nav-mobile-cta"><a href="appointment.html" class="btn btn-primary">Book Consultation</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <a href="appointment.html" class="btn btn-primary">Book Consultation</a>
-        <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+        <button type="button" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+        </button>
       </div>
     </div>
   </header>
 
   <main>
     <!-- Page Header -->
-    <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 3.5rem 0; border-bottom: 1px solid var(--slate-200);">
+    <section class="page-header">
       <div class="container">
-        <div class="badge badge-primary" style="margin-bottom: 0.75rem;">Medical Staff Directory Template</div>
-        <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.5rem;">Meet Our Medical Specialists</h1>
-        <p style="color: var(--slate-600); max-width: 680px;">
+        <div class="badge badge-primary mb-sm">Medical Staff Directory Template</div>
+        <h1 class="page-header__title">Meet Our Medical Specialists</h1>
+        <p class="page-header__desc">
           Physician directory template showcasing credential badges, institutional affiliations, spoken languages, and direct scheduling integrations.
         </p>
 
-        <div style="background: rgba(255, 255, 255, 0.85); border: 1px dashed var(--primary); padding: 0.85rem 1.25rem; border-radius: var(--radius-sm); margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--slate-700);">
-          <span>💡</span>
-          <span><strong>Client Implementation Note:</strong> Staff profiles, headshots, credentials, and localized consultation hours can be dynamically populated from your clinic's database or CMS.</span>
+        <div class="template-note">
+          <svg class="icon icon-md template-note__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+          <span><strong>Implementation Note:</strong> Staff profiles, headshots, credentials, and localized consultation hours can be dynamically populated from your clinic's database or CMS.</span>
         </div>
       </div>
     </section>
@@ -87,22 +92,22 @@
       <div class="container">
 
         <!-- Specialty Filter Tabs -->
-        <div class="filter-tabs">
-          <button class="filter-tab active doctor-tab" data-specialty="all">All Specialists (4)</button>
-          <button class="filter-tab doctor-tab" data-specialty="internal">Internal Medicine</button>
-          <button class="filter-tab doctor-tab" data-specialty="surgery">Orthopedic Surgery</button>
-          <button class="filter-tab doctor-tab" data-specialty="pediatrics">Pediatrics</button>
-          <button class="filter-tab doctor-tab" data-specialty="cardiology">Cardiology</button>
+        <div class="filter-tabs" role="group" aria-label="Filter specialists by specialty">
+          <button type="button" class="filter-tab active doctor-tab" data-specialty="all">All Specialists (4)</button>
+          <button type="button" class="filter-tab doctor-tab" data-specialty="internal">Internal Medicine</button>
+          <button type="button" class="filter-tab doctor-tab" data-specialty="surgery">Orthopedic Surgery</button>
+          <button type="button" class="filter-tab doctor-tab" data-specialty="pediatrics">Pediatrics</button>
+          <button type="button" class="filter-tab doctor-tab" data-specialty="cardiology">Cardiology</button>
         </div>
 
         <div class="doctors-grid">
 
-          <!-- Doctor 1: Dr. John Doe -->
-          <div class="doctor-card" data-specialty="internal">
+          <!-- Doctor 1 -->
+          <article class="doctor-card" data-specialty="internal">
             <div class="doctor-photo-wrap">
               <img src="John%20Doe.jpg" alt="Dr. John Doe, MD" class="doctor-photo">
               <div class="doctor-status">
-                <span class="status-indicator"></span> Available Today
+                <span class="status-indicator" aria-hidden="true"></span> Available Today
               </div>
             </div>
             <div class="doctor-body">
@@ -111,26 +116,29 @@
               <p class="doctor-bio">
                 Over 18 years of experience leading multi-disciplinary clinical departments, preventative diagnostics, and geriatric care programs. Harvard Medical School alumnus and fellow of the American College of Physicians.
               </p>
-              <div style="font-size: 0.8125rem; color: var(--slate-500); margin-bottom: 1rem;">
+              <div class="doctor-meta-info">
                 <strong>Languages:</strong> English, French<br>
                 <strong>Affiliation:</strong> ApexCare Central &amp; Nairobi Clinic
               </div>
               <div class="doctor-footer">
                 <div>
-                  <div class="doctor-rating">★ 4.95 (142 reviews)</div>
-                  <div style="font-size: 0.8125rem; color: var(--navy-900); font-weight: 700;">$120 / consultation</div>
+                  <div class="doctor-rating">
+                    <svg class="icon icon-sm doctor-rating-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    4.95 (142 reviews)
+                  </div>
+                  <div class="doctor-fee">$120 / consultation</div>
                 </div>
-                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. John Doe'); sessionStorage.setItem('apex_prefill_dept', 'General & Family Medicine');" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Book Dr. Doe</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. John Doe'); sessionStorage.setItem('apex_prefill_dept', 'general');" class="btn btn-primary btn-sm">Book Dr. Doe</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Doctor 2: Dr. Jane Smith -->
-          <div class="doctor-card" data-specialty="surgery">
+          <!-- Doctor 2 -->
+          <article class="doctor-card" data-specialty="surgery">
             <div class="doctor-photo-wrap">
               <img src="Jane%20Smith.jpg" alt="Dr. Jane Smith, FACS" class="doctor-photo">
               <div class="doctor-status">
-                <span class="status-indicator"></span> Next Slot: Tomorrow
+                <span class="status-indicator" aria-hidden="true"></span> Next Slot: Tomorrow
               </div>
             </div>
             <div class="doctor-body">
@@ -139,54 +147,60 @@
               <p class="doctor-bio">
                 Distinguished surgical specialist focusing on arthroscopic knee and shoulder reconstructions, complex sports trauma, and joint arthroplasty. Fellow of the American College of Surgeons with 16+ years in operative practice.
               </p>
-              <div style="font-size: 0.8125rem; color: var(--slate-500); margin-bottom: 1rem;">
+              <div class="doctor-meta-info">
                 <strong>Languages:</strong> English, Swahili<br>
                 <strong>Affiliation:</strong> ApexCare Surgical Institute
               </div>
               <div class="doctor-footer">
                 <div>
-                  <div class="doctor-rating">★ 4.98 (210 reviews)</div>
-                  <div style="font-size: 0.8125rem; color: var(--navy-900); font-weight: 700;">$180 / consultation</div>
+                  <div class="doctor-rating">
+                    <svg class="icon icon-sm doctor-rating-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    4.98 (210 reviews)
+                  </div>
+                  <div class="doctor-fee">$180 / consultation</div>
                 </div>
-                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. Jane Smith'); sessionStorage.setItem('apex_prefill_dept', 'Orthopedics & Surgical Care');" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Book Dr. Smith</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. Jane Smith'); sessionStorage.setItem('apex_prefill_dept', 'surgery');" class="btn btn-primary btn-sm">Book Dr. Smith</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Doctor 3: Dr. Emily Johnson -->
-          <div class="doctor-card" data-specialty="pediatrics">
+          <!-- Doctor 3 -->
+          <article class="doctor-card" data-specialty="pediatrics">
             <div class="doctor-photo-wrap">
               <img src="Emily%20Johnson.jpg" alt="Dr. Emily Johnson, FAAP" class="doctor-photo">
               <div class="doctor-status">
-                <span class="status-indicator"></span> Available Today
+                <span class="status-indicator" aria-hidden="true"></span> Available Today
               </div>
             </div>
             <div class="doctor-body">
               <h3 class="doctor-name">Dr. Emily Johnson, FAAP</h3>
               <div class="doctor-specialty">Pediatric Specialist &amp; Neonatal Health</div>
               <p class="doctor-bio">
-                Specialized in developmental pediatrics, childhood infectious disease immunization, and adolescent medicine. Renowned for creating a gentle, anxiety-free clinical environment for infants and growing children.
+                Specialized in developmental pediatrics, childhood infectious disease immunization, and adolescent medicine. Renowned for creating a calm clinical environment for infants and growing children.
               </p>
-              <div style="font-size: 0.8125rem; color: var(--slate-500); margin-bottom: 1rem;">
+              <div class="doctor-meta-info">
                 <strong>Languages:</strong> English, Spanish<br>
-                <strong>Affiliation:</strong> Children's Wellness Pavillion
+                <strong>Affiliation:</strong> Children's Wellness Pavilion
               </div>
               <div class="doctor-footer">
                 <div>
-                  <div class="doctor-rating">★ 4.92 (185 reviews)</div>
-                  <div style="font-size: 0.8125rem; color: var(--navy-900); font-weight: 700;">$110 / consultation</div>
+                  <div class="doctor-rating">
+                    <svg class="icon icon-sm doctor-rating-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    4.92 (185 reviews)
+                  </div>
+                  <div class="doctor-fee">$110 / consultation</div>
                 </div>
-                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. Emily Johnson'); sessionStorage.setItem('apex_prefill_dept', 'Pediatrics & Neonatal Care');" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Book Dr. Johnson</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. Emily Johnson'); sessionStorage.setItem('apex_prefill_dept', 'pediatrics');" class="btn btn-primary btn-sm">Book Dr. Johnson</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Doctor 4: Dr. Michael Brown -->
-          <div class="doctor-card" data-specialty="cardiology">
+          <!-- Doctor 4 -->
+          <article class="doctor-card" data-specialty="cardiology">
             <div class="doctor-photo-wrap">
               <img src="Michael%20Brown.jpg" alt="Dr. Michael Brown, FACC" class="doctor-photo">
               <div class="doctor-status">
-                <span class="status-indicator"></span> Next Slot: Thursday
+                <span class="status-indicator" aria-hidden="true"></span> Next Slot: Thursday
               </div>
             </div>
             <div class="doctor-body">
@@ -195,36 +209,42 @@
               <p class="doctor-bio">
                 Expert in diagnostic angiography, preventive cardiovascular risk stratification, echocardiography, and hypertension treatment. 15+ years managing acute cardiac syndromes and post-infarction care.
               </p>
-              <div style="font-size: 0.8125rem; color: var(--slate-500); margin-bottom: 1rem;">
+              <div class="doctor-meta-info">
                 <strong>Languages:</strong> English, German<br>
                 <strong>Affiliation:</strong> International Heart &amp; Vascular Center
               </div>
               <div class="doctor-footer">
                 <div>
-                  <div class="doctor-rating">★ 4.97 (164 reviews)</div>
-                  <div style="font-size: 0.8125rem; color: var(--navy-900); font-weight: 700;">$160 / consultation</div>
+                  <div class="doctor-rating">
+                    <svg class="icon icon-sm doctor-rating-star" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    4.97 (164 reviews)
+                  </div>
+                  <div class="doctor-fee">$160 / consultation</div>
                 </div>
-                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. Michael Brown'); sessionStorage.setItem('apex_prefill_dept', 'Cardiology & Cardiovascular Center');" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Book Dr. Brown</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_doctor', 'Dr. Michael Brown'); sessionStorage.setItem('apex_prefill_dept', 'cardiology');" class="btn btn-primary btn-sm">Book Dr. Brown</a>
               </div>
             </div>
-          </div>
+          </article>
 
         </div>
 
         <!-- Credentialing Banner -->
-        <div style="background: var(--white); border: 1px solid var(--slate-200); border-radius: var(--radius-lg); padding: 2.5rem; margin-top: 3.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem; box-shadow: var(--shadow-sm);">
+        <div class="panel-banner panel-banner--white">
           <div>
-            <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.35rem;">Custom Practitioner Management</h3>
-            <p style="font-size: 0.9375rem; color: var(--slate-600); max-width: 600px;">Connect your hospital's scheduling software or let Philip configure a bespoke physician onboarding flow.</p>
+            <h3 class="panel-banner__title">Custom Practitioner Management</h3>
+            <p class="panel-banner__desc">Connect your hospital's scheduling software or configure a bespoke physician onboarding flow.</p>
           </div>
-          <a href="contact.html" class="btn btn-secondary">Inquire for Clinic Deployment ➔</a>
+          <a href="contact.html" class="btn btn-secondary">
+            Inquire for Clinic Deployment
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
         </div>
 
       </div>
     </section>
   </main>
 
-  <!-- Modern Clinical Footer -->
+  <!-- Clinical Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -239,7 +259,7 @@
           <p class="footer-desc">
             A turnkey, patient-centric digital clinical booking system template facilitating seamless appointments, board-certified physician consultations, and international emergency triage.
           </p>
-          <div style="font-size: 0.8125rem; color: var(--slate-400);">
+          <div class="footer-contact">
             <strong>Client Consultation:</strong> +254 708 746 611<br>
             <strong>Engineering:</strong> philipmaina637@gmail.com
           </div>
@@ -269,10 +289,10 @@
 
         <div>
           <div class="footer-col-title">Client Specifications</div>
-          <p style="font-size: 0.8125rem; line-height: 1.6; color: var(--slate-400); margin-bottom: 1rem;">
+          <p class="footer-spec-text">
             Turnkey commercial web template. White-label ready, zero heavy framework overhead, sub-second load times.
           </p>
-          <div class="badge badge-neutral" style="background: rgba(255, 255, 255, 0.08); color: #94a3b8;">
+          <div class="badge badge-neutral badge-compliance">
             ISO 27001 &amp; HIPAA Aligned
           </div>
         </div>
@@ -281,7 +301,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 ApexCare International Healthcare Booking System. Client Preview Template.</div>
         <div class="footer-author">
-          Engineered by <a href="https://kivice.github.io/" target="_blank">Philip Maina (@Kivice)</a> · Kirinyaga University
+          Engineered by <a href="https://kivice.github.io/" target="_blank" rel="noopener noreferrer">Philip Maina (@Kivice)</a> · Kirinyaga University
         </div>
       </div>
     </div>

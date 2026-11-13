@@ -13,25 +13,28 @@
 </head>
 <body>
 
-  <!-- Client Preview Template Bar -->
+  <!-- Client Preview Utility Bar -->
   <div class="client-demo-bar">
     <div class="container client-demo-content">
       <div class="client-demo-badge">
-        <span class="pulse-dot"></span>
+        <span class="pulse-dot" aria-hidden="true"></span>
         <span><strong>Client Showcase Template</strong> · Modular Services Catalog</span>
       </div>
 
-      <div class="client-theme-switcher">
-        <span style="font-size: 0.75rem; opacity: 0.85;">Theme Preview:</span>
-        <button class="theme-swatch active" data-theme="blue" title="Clinical Sky (Default)" style="background:#0284c7;"></button>
-        <button class="theme-swatch" data-theme="emerald" title="Medical Emerald" style="background:#059669;"></button>
-        <button class="theme-swatch" data-theme="indigo" title="Healthtech Indigo" style="background:#4f46e5;"></button>
-        <button class="theme-swatch" data-theme="rose" title="Care Crimson" style="background:#e11d48;"></button>
+      <div class="client-theme-switcher" role="group" aria-label="Theme color switcher">
+        <span class="theme-label">Theme:</span>
+        <button type="button" class="theme-swatch active" data-theme="blue" title="Clinical Sky (Default)" aria-label="Clinical Sky theme"></button>
+        <button type="button" class="theme-swatch" data-theme="emerald" title="Medical Emerald" aria-label="Medical Emerald theme"></button>
+        <button type="button" class="theme-swatch" data-theme="indigo" title="Healthtech Indigo" aria-label="Healthtech Indigo theme"></button>
+        <button type="button" class="theme-swatch" data-theme="rose" title="Care Crimson" aria-label="Care Crimson theme"></button>
       </div>
 
       <div class="client-demo-actions">
-        <a href="appointment.html" class="client-inquire-pill">⚡ Try Demo Scheduler ➔</a>
-        <a href="contact.html" class="client-inquire-pill" style="color: #38bdf8;">Custom Deployment Inquiries</a>
+        <a href="appointment.html" class="client-inquire-pill">
+          <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
+          Scheduler Demo
+        </a>
+        <a href="contact.html" class="client-inquire-pill client-inquire-pill--accent">Custom Deployment</a>
       </div>
     </div>
   </div>
@@ -47,37 +50,39 @@
         </div>
       </a>
 
-      <nav>
+      <nav aria-label="Primary navigation">
         <ul class="nav-links">
           <li><a href="index.html" class="nav-link">Home</a></li>
           <li><a href="services.html" class="nav-link active">Clinical Services</a></li>
           <li><a href="meet.html" class="nav-link">Medical Specialists</a></li>
           <li><a href="testimonials.html" class="nav-link">Patient Reviews</a></li>
-          <li><a href="contact.html" class="nav-link">Emergency & Support</a></li>
-          <li><a href="appointment.html" class="nav-link" style="color: var(--primary); font-weight: 700;">Demo Scheduler</a></li>
+          <li><a href="contact.html" class="nav-link">Emergency &amp; Support</a></li>
+          <li class="nav-mobile-cta"><a href="appointment.html" class="btn btn-primary">Book Consultation</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
         <a href="appointment.html" class="btn btn-primary">Book Consultation</a>
-        <button class="mobile-toggle" aria-label="Toggle Menu">☰</button>
+        <button type="button" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg class="icon icon-md" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg>
+        </button>
       </div>
     </div>
   </header>
 
   <main>
     <!-- Page Header -->
-    <section style="background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); padding: 3.5rem 0; border-bottom: 1px solid var(--slate-200);">
+    <section class="page-header">
       <div class="container">
-        <div class="badge badge-primary" style="margin-bottom: 0.75rem;">Modular Service Catalog Template</div>
-        <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.5rem;">Comprehensive Clinical Services</h1>
-        <p style="color: var(--slate-600); max-width: 680px;">
-          Explore sample clinical divisions. Each service module features diagnostic scope checklists, transparent consultation pricing, and 1-click scheduling pre-fill triggers.
+        <div class="badge badge-primary mb-sm">Modular Service Catalog Template</div>
+        <h1 class="page-header__title">Comprehensive Clinical Services</h1>
+        <p class="page-header__desc">
+          Explore sample clinical divisions. Each service module features diagnostic scope checklists, transparent consultation pricing, and one-click scheduling pre-fill triggers.
         </p>
 
-        <div style="background: rgba(255, 255, 255, 0.85); border: 1px dashed var(--primary); padding: 0.85rem 1.25rem; border-radius: var(--radius-sm); margin-top: 1.5rem; display: inline-flex; align-items: center; gap: 0.75rem; font-size: 0.8125rem; color: var(--slate-700);">
-          <span>💡</span>
-          <span><strong>Client Implementation Note:</strong> All departments, pricing, and procedures are modular and can be dynamically connected to your clinic's database in minutes.</span>
+        <div class="template-note">
+          <svg class="icon icon-md template-note__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 16v-4"></path><path d="M12 8h.01"></path></svg>
+          <span><strong>Implementation Note:</strong> All departments, pricing tiers, and clinical procedures are modular and can be connected to your facility's database in minutes.</span>
         </div>
       </div>
     </section>
@@ -87,20 +92,20 @@
       <div class="container">
 
         <!-- Category Filters -->
-        <div class="filter-tabs">
-          <button class="filter-tab active service-tab" data-filter="all">All Departments (6)</button>
-          <button class="filter-tab service-tab" data-filter="primary">Primary Care</button>
-          <button class="filter-tab service-tab" data-filter="specialist">Specialist &amp; Surgery</button>
-          <button class="filter-tab service-tab" data-filter="diagnostic">Diagnostics &amp; Labs</button>
-          <button class="filter-tab service-tab" data-filter="emergency">Emergency Care</button>
+        <div class="filter-tabs" role="group" aria-label="Filter clinical departments">
+          <button type="button" class="filter-tab active service-tab" data-filter="all">All Departments (6)</button>
+          <button type="button" class="filter-tab service-tab" data-filter="primary">Primary Care</button>
+          <button type="button" class="filter-tab service-tab" data-filter="specialist">Specialist &amp; Surgery</button>
+          <button type="button" class="filter-tab service-tab" data-filter="diagnostic">Diagnostics &amp; Labs</button>
+          <button type="button" class="filter-tab service-tab" data-filter="emergency">Emergency Care</button>
         </div>
 
         <div class="services-grid">
 
-          <!-- Service 1: General Consultation -->
-          <div class="service-card" data-category="primary">
+          <!-- Service 1 -->
+          <article class="service-card" data-category="primary">
             <div class="service-image-wrap">
-              <img src="General-Consultation.jpg" alt="General Consultation" class="service-image">
+              <img src="General-Consultation.jpg" alt="General Medical Consultation" class="service-image">
               <span class="service-tag">Primary Care</span>
             </div>
             <div class="service-body">
@@ -108,45 +113,45 @@
               <p class="service-desc">
                 Holistic preventative checkups, acute illness diagnosis, biometric monitoring, and chronic condition management directed by experienced physicians.
               </p>
-              <ul style="font-size: 0.8125rem; color: var(--slate-600); margin: 0 0 1.25rem 1.25rem; line-height: 1.6;">
+              <ul class="service-checklist">
                 <li>Comprehensive physical examinations</li>
                 <li>Prescription renewal &amp; pharmacology review</li>
                 <li>Preventative lifestyle &amp; metabolic screening</li>
               </ul>
               <div class="service-meta">
                 <div class="service-price">From <strong>$120</strong> / session</div>
-                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'General & Family Medicine');" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Schedule</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'general');" class="btn btn-primary btn-sm">Schedule</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Service 2: Specialist Appointments -->
-          <div class="service-card" data-category="specialist">
+          <!-- Service 2 -->
+          <article class="service-card" data-category="specialist">
             <div class="service-image-wrap">
-              <img src="Specialist%20Appontments.jpg" alt="Specialist Appointments" class="service-image">
+              <img src="Specialist%20Appontments.jpg" alt="Specialist Consultations" class="service-image">
               <span class="service-tag">Specialized Care</span>
             </div>
             <div class="service-body">
               <h3 class="service-title">Specialist Consultations</h3>
               <p class="service-desc">
-                Direct access to top specialists across Cardiology, Pediatrics, Neurology, Orthopedics, and Endocrinology without waiting lists.
+                Direct access to board-certified specialists across Cardiology, Pediatrics, Neurology, Orthopedics, and Endocrinology without waiting lists.
               </p>
-              <ul style="font-size: 0.8125rem; color: var(--slate-600); margin: 0 0 1.25rem 1.25rem; line-height: 1.6;">
+              <ul class="service-checklist">
                 <li>Interventional cardiology &amp; ECG review</li>
                 <li>Pediatric wellness &amp; neonatal screenings</li>
                 <li>Joint reconstructive surgical consultations</li>
               </ul>
               <div class="service-meta">
                 <div class="service-price">From <strong>$160</strong> / session</div>
-                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'Cardiology & Cardiovascular Center');" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Schedule</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'cardiology');" class="btn btn-primary btn-sm">Schedule</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Service 3: Advanced Treatments -->
-          <div class="service-card" data-category="specialist">
+          <!-- Service 3 -->
+          <article class="service-card" data-category="specialist">
             <div class="service-image-wrap">
-              <img src="Advanced-Healthcare%20treatment.jpg" alt="Advanced Treatments" class="service-image">
+              <img src="Advanced-Healthcare%20treatment.jpg" alt="Advanced Surgical Treatments" class="service-image">
               <span class="service-tag">Surgical &amp; Inpatient</span>
             </div>
             <div class="service-body">
@@ -154,22 +159,22 @@
               <p class="service-desc">
                 Minimally invasive laparoscopic procedures, arthroscopic joint reconstruction, and precision trauma interventions in sterile surgical suites.
               </p>
-              <ul style="font-size: 0.8125rem; color: var(--slate-600); margin: 0 0 1.25rem 1.25rem; line-height: 1.6;">
+              <ul class="service-checklist">
                 <li>Orthopedic arthroplasty &amp; ligament repair</li>
                 <li>Modern outpatient day-surgery wards</li>
                 <li>Post-operative rehabilitation pathways</li>
               </ul>
               <div class="service-meta">
                 <div class="service-price">From <strong>$180</strong> / triage</div>
-                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'Orthopedics & Surgical Care');" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Schedule</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'surgery');" class="btn btn-primary btn-sm">Schedule</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Service 4: Diagnostic Lab -->
-          <div class="service-card" data-category="diagnostic">
+          <!-- Service 4 -->
+          <article class="service-card" data-category="diagnostic">
             <div class="service-image-wrap">
-              <img src="diagnostic_lab.png" alt="Diagnostic Laboratories" class="service-image">
+              <img src="diagnostic_lab.png" alt="Diagnostic Pathology and Imaging" class="service-image">
               <span class="service-tag">Pathology &amp; Imaging</span>
             </div>
             <div class="service-body">
@@ -177,86 +182,95 @@
               <p class="service-desc">
                 High-precision diagnostic testing utilizing automated hematology, immunoassay platforms, digital X-ray, and ultrasound equipment.
               </p>
-              <ul style="font-size: 0.8125rem; color: var(--slate-600); margin: 0 0 1.25rem 1.25rem; line-height: 1.6;">
+              <ul class="service-checklist">
                 <li>Comprehensive metabolic &amp; lipid panels</li>
                 <li>Digital radiology &amp; ultrasound sonography</li>
-                <li>Secure online lab portal result delivery within 24h</li>
+                <li>Encrypted online lab portal delivery within 24h</li>
               </ul>
               <div class="service-meta">
                 <div class="service-price">From <strong>$95</strong> / panel</div>
-                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'Diagnostic & Laboratory Pathology');" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Schedule</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'diagnostics');" class="btn btn-primary btn-sm">Schedule</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Service 5: Emergency Care -->
-          <div class="service-card" data-category="emergency">
+          <!-- Service 5 -->
+          <article class="service-card" data-category="emergency">
             <div class="service-image-wrap">
-              <img src="Emergency-Medical-Care.webp" alt="Emergency Medical Care" class="service-image">
-              <span class="service-tag" style="color: var(--rose-500); background: #ffe4e6;">24/7 Acute Care</span>
+              <img src="Emergency-Medical-Care.webp" alt="Emergency Medical and Trauma Care" class="service-image">
+              <span class="service-tag service-tag--urgent">24/7 Acute Care</span>
             </div>
             <div class="service-body">
               <h3 class="service-title">Emergency Medical &amp; Trauma Care</h3>
               <p class="service-desc">
                 Immediate clinical triage, urgent trauma stabilization, international patient repatriation, and critical hospital dispatch.
               </p>
-              <ul style="font-size: 0.8125rem; color: var(--slate-600); margin: 0 0 1.25rem 1.25rem; line-height: 1.6;">
+              <ul class="service-checklist">
                 <li>Immediate priority triage intake</li>
                 <li>Cardiac resuscitation &amp; acute oxygenation</li>
                 <li>Emergency ambulance dispatch integration</li>
               </ul>
               <div class="service-meta">
-                <div class="service-price" style="color: var(--rose-500); font-weight: 700;">Immediate Priority</div>
-                <a href="contact.html" class="btn btn-emergency" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Call Hotline</a>
+                <div class="service-price service-price--urgent">Immediate Priority</div>
+                <a href="contact.html" class="btn btn-emergency btn-sm">Call Hotline</a>
               </div>
             </div>
-          </div>
+          </article>
 
-          <!-- Service 6: Telemedicine -->
-          <div class="service-card" data-category="primary">
-            <div class="service-image-wrap" style="background: linear-gradient(135deg, var(--primary) 0%, #0f172a 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3.5rem;">
-              💻
+          <!-- Service 6 -->
+          <article class="service-card" data-category="primary">
+            <div class="service-image-wrap service-visual-telehealth">
+              <div class="telehealth-preview-frame">
+                <div class="telehealth-preview-icon">
+                  <svg class="icon icon-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="23 7 16 12 23 17 23 7"></polygon><rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect></svg>
+                </div>
+                <div class="telehealth-preview-status">
+                  <span class="telehealth-preview-dot" aria-hidden="true"></span>
+                  E2EE TELEHEALTH READY
+                </div>
+              </div>
               <span class="service-tag">Virtual Clinic</span>
             </div>
             <div class="service-body">
               <h3 class="service-title">International Telemedicine</h3>
               <p class="service-desc">
-                Encrypted, HIPAA-compliant HD video consultations connecting patients across East Africa and worldwide with leading medical specialists.
+                Encrypted, HIPAA-conscious HD video consultations connecting patients across East Africa and worldwide with leading medical specialists.
               </p>
-              <ul style="font-size: 0.8125rem; color: var(--slate-600); margin: 0 0 1.25rem 1.25rem; line-height: 1.6;">
+              <ul class="service-checklist">
                 <li>Remote second opinions &amp; clinical file review</li>
-                <li>Digital prescriptions dispatched to partner pharmacies</li>
+                <li>Digital prescriptions sent to partner pharmacies</li>
                 <li>No international travel required</li>
               </ul>
               <div class="service-meta">
                 <div class="service-price">From <strong>$85</strong> / call</div>
-                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'General & Family Medicine');" class="btn btn-primary" style="padding: 0.45rem 1rem; font-size: 0.8125rem;">Schedule</a>
+                <a href="appointment.html" onclick="sessionStorage.setItem('apex_prefill_dept', 'general'); sessionStorage.setItem('apex_prefill_mode', 'Telemedicine');" class="btn btn-primary btn-sm">Schedule</a>
               </div>
             </div>
-          </div>
+          </article>
 
         </div>
       </div>
     </section>
 
-    <!-- Customization Callout for Prospective Clients -->
+    <!-- Customization Callout -->
     <section class="section section-alt">
       <div class="container">
-        <div style="background: #f8fafc; border: 1px solid var(--slate-300); border-radius: var(--radius-lg); padding: 2.5rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.5rem;">
+        <div class="panel-banner">
           <div>
-            <div class="badge badge-primary" style="margin-bottom: 0.5rem;">Commercial Licensing &amp; Setup</div>
-            <h3 style="font-size: 1.4rem; font-weight: 800; color: var(--navy-950); margin-bottom: 0.35rem;">Need to tailor this services catalog for your hospital?</h3>
-            <p style="font-size: 0.9375rem; color: var(--slate-600); max-width: 600px;">Philip Maina offers rapid customization, multi-currency pricing (KES/USD), insurance pre-authorization hooks, and database connectivity.</p>
+            <div class="badge badge-primary mb-sm">Commercial Licensing &amp; Setup</div>
+            <h3 class="panel-banner__title">Need to tailor this services catalog for your hospital?</h3>
+            <p class="panel-banner__desc">Philip Maina offers rapid customization, multi-currency pricing (KES/USD), insurance pre-authorization hooks, and database connectivity.</p>
           </div>
           <a href="https://wa.me/254708746611?text=Hi%20Philip,%20I%20would%20like%20to%20discuss%20customizing%20the%20clinical%20services%20template%20for%20my%20practice." target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Discuss Custom Deployment ➔
+            Discuss Custom Deployment
+            <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
           </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Modern Clinical Footer -->
+  <!-- Clinical Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -271,7 +285,7 @@
           <p class="footer-desc">
             A turnkey, patient-centric digital clinical booking system template facilitating seamless appointments, board-certified physician consultations, and international emergency triage.
           </p>
-          <div style="font-size: 0.8125rem; color: var(--slate-400);">
+          <div class="footer-contact">
             <strong>Client Consultation:</strong> +254 708 746 611<br>
             <strong>Engineering:</strong> philipmaina637@gmail.com
           </div>
@@ -301,10 +315,10 @@
 
         <div>
           <div class="footer-col-title">Client Specifications</div>
-          <p style="font-size: 0.8125rem; line-height: 1.6; color: var(--slate-400); margin-bottom: 1rem;">
+          <p class="footer-spec-text">
             Turnkey commercial web template. White-label ready, zero heavy framework overhead, sub-second load times.
           </p>
-          <div class="badge badge-neutral" style="background: rgba(255, 255, 255, 0.08); color: #94a3b8;">
+          <div class="badge badge-neutral badge-compliance">
             ISO 27001 &amp; HIPAA Aligned
           </div>
         </div>
@@ -313,7 +327,7 @@
       <div class="footer-bottom">
         <div>&copy; 2026 ApexCare International Healthcare Booking System. Client Preview Template.</div>
         <div class="footer-author">
-          Engineered by <a href="https://kivice.github.io/" target="_blank">Philip Maina (@Kivice)</a> · Kirinyaga University
+          Engineered by <a href="https://kivice.github.io/" target="_blank" rel="noopener noreferrer">Philip Maina (@Kivice)</a> · Kirinyaga University
         </div>
       </div>
     </div>
